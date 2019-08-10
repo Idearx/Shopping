@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="23a38294-31fb-4e70-8679-fa4395a8c465" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/111.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/123.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/detail1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/detailnew2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/detailnew2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/phone_base_detail.html" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/common/detailnew2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#38929#38958#0#HTML" expanded="true" />
+                <element signature="e#39111#39191#0#HTML" expanded="true" />
+                <element signature="e#42670#42734#0#HTML" expanded="true" />
+                <element signature="e#173333#174203#0#HTML" />
+                <element signature="e#217465#225184#0#HTML" />
+                <element signature="e#218480#224552#0#HTML" />
+                <element signature="e#364404#416549#0#HTML" />
+                <element signature="e#417988#418010#0#HTML" expanded="true" />
+                <element signature="e#422577#428373#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>sku</find>
+      <find>查看全部参数</find>
+      <find>selected</find>
+      <find>/images/icon-common.svg</find>
+      <find>./detail1_files/</find>
+      <find>base/</find>
+      <find>/static/js/100_100</find>
+      <find>/static/images/2019</find>
+      <find>./detail1_files</find>
+      <find>商品详情-书签</find>
+      <find>layout</find>
+      <find>弹出层</find>
+      <find>dispa</find>
+      <find>namespace:</find>
+      <find>namespace=ec</find>
+      <find>ec</find>
+      <find>skuproduct-recommend</find>
+      <find>product-recommend</find>
+      <find>自选套餐</find>
+      <find>评价</find>
+      <find>用户评价</find>
+      <find>浏览记录</find>
+      <find>商品简介-按钮</find>
+      <find>7206.png</find>
+      <find>商品简介-商品信息</find>
+      <find>增值服务</find>
+      <find>评价-</find>
+      <find>选择颜色</find>
+      <find>请登录</find>
+      <find>商品详情</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>/static</replace>
+      <replace>/static/js/</replace>
+      <replace>/static/images/100_100</replace>
+      <replace>/static/js</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Shopping/urls.py" />
+        <option value="$PROJECT_DIR$/Shopping/settings.py" />
+        <option value="$PROJECT_DIR$/Shopping/__init__.py" />
+        <option value="$PROJECT_DIR$/templates/common/detail.html" />
+        <option value="$PROJECT_DIR$/App/urls.py" />
+        <option value="$PROJECT_DIR$/templates/common/huawei.html" />
+        <option value="$PROJECT_DIR$/static/css/main.min(1).css" />
+        <option value="$PROJECT_DIR$/templates/common/phone_base_detail.html" />
+        <option value="$PROJECT_DIR$/templates/common/detail1.html" />
+        <option value="$PROJECT_DIR$/templates/common/detailnew1.html" />
+        <option value="$PROJECT_DIR$/App/views.py" />
+        <option value="$PROJECT_DIR$/templates/common/123.html" />
+        <option value="$PROJECT_DIR$/templates/common/detailnew2.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="575" />
+    <option name="height" value="484" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Shopping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopping" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopping" type="462c0819:PsiDirectoryNode" />
+              <item name="Shopping" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopping" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopping" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopping" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/common" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/common" />
+      <recent name="$PROJECT_DIR$/static/js" />
+      <recent name="$PROJECT_DIR$/static/images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Shopping" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Shopping" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="23a38294-31fb-4e70-8679-fa4395a8c465" name="Default Changelist" comment="" />
+      <created>1565179187038</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565179187038</updated>
+      <workItem from="1565179189314" duration="4362000" />
+      <workItem from="1565185660434" duration="973000" />
+      <workItem from="1565221022411" duration="646000" />
+      <workItem from="1565222816110" duration="3185000" />
+      <workItem from="1565233740854" duration="270000" />
+      <workItem from="1565264189359" duration="7696000" />
+      <workItem from="1565306923686" duration="4371000" />
+      <workItem from="1565324279064" duration="8000" />
+      <workItem from="1565324793771" duration="2284000" />
+      <workItem from="1565340526406" duration="592000" />
+      <workItem from="1565348299554" duration="2761000" />
+      <workItem from="1565362416689" duration="297000" />
+      <workItem from="1565394155713" duration="573000" />
+      <workItem from="1565396505576" duration="8191000" />
+      <workItem from="1565405773517" duration="2983000" />
+      <workItem from="1565409760873" duration="10125000" />
+    </task>
+    <task id="LOCAL-00001" summary="1123">
+      <created>1565411683854</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1565411683854</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="49317000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1855" height="1009" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20641948" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.24972376" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32982844" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1123" />
+    <option name="LAST_COMMIT_MESSAGE" value="1123" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Shopping/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/icon01.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/100_100_1553502823158mp.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/detailnew.html" />
+    <entry file="file://$PROJECT_DIR$/static/js/saved_resource(1)">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/detail1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="25204" column="7" selection-start-line="25204" selection-start-column="7" selection-end-line="25204" selection-end-column="7" />
+          <folding>
+            <element signature="e#128315#128336#0#HTML" expanded="true" />
+            <element signature="e#231823#231859#0#HTML" expanded="true" />
+            <element signature="e#234018#234054#0#HTML" expanded="true" />
+            <element signature="e#237159#237195#0#HTML" expanded="true" />
+            <element signature="e#240301#240337#0#HTML" expanded="true" />
+            <element signature="e#243442#243478#0#HTML" expanded="true" />
+            <element signature="e#246587#246623#0#HTML" expanded="true" />
+            <element signature="e#249733#249769#0#HTML" expanded="true" />
+            <element signature="e#252878#252914#0#HTML" expanded="true" />
+            <element signature="e#256024#256060#0#HTML" expanded="true" />
+            <element signature="e#259166#259202#0#HTML" expanded="true" />
+            <element signature="e#262308#262344#0#HTML" expanded="true" />
+            <element signature="e#265450#265486#0#HTML" expanded="true" />
+            <element signature="e#268592#268628#0#HTML" expanded="true" />
+            <element signature="e#272949#272985#0#HTML" expanded="true" />
+            <element signature="e#273923#273944#0#HTML" expanded="true" />
+            <element signature="e#275108#275130#0#HTML" expanded="true" />
+            <element signature="e#275295#275317#0#HTML" expanded="true" />
+            <element signature="e#276517#276538#0#HTML" expanded="true" />
+            <element signature="e#277851#277873#0#HTML" expanded="true" />
+            <element signature="e#279183#279204#0#HTML" expanded="true" />
+            <element signature="e#280898#280920#0#HTML" expanded="true" />
+            <element signature="e#281287#281323#0#HTML" expanded="true" />
+            <element signature="e#281816#281822#0#HTML" expanded="true" />
+            <element signature="e#282311#282332#0#HTML" expanded="true" />
+            <element signature="e#871909#871936#0#HTML" expanded="true" />
+            <element signature="e#872208#872279#0#HTML" expanded="true" />
+            <element signature="e#872420#872539#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/detailnew1.html" />
+    <entry file="file://$PROJECT_DIR$/App/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Shopping/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="e#642#683#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/huawei.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72072">
+          <caret line="4004" column="35" selection-start-line="4004" selection-start-column="35" selection-end-line="4004" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/phone_base_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48636">
+          <caret line="5925" column="6" lean-forward="true" selection-start-line="5925" selection-start-column="6" selection-end-line="5925" selection-end-column="6" />
+          <folding>
+            <element signature="e#157813#197595#0#HTML" />
+            <element signature="e#197676#197698#0#HTML" expanded="true" />
+            <element signature="e#197651#383428#0#HTML" />
+            <element signature="e#383430#422658#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/saved_resource">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3021">
+          <caret line="3" column="70255" selection-start-line="3" selection-start-column="70253" selection-end-line="3" selection-end-column="70255" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/animate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="268" column="17" selection-start-line="268" selection-start-column="17" selection-end-line="268" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/swiper.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style(1).css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/proscroll3d.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/prohotlist.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="2867" selection-start-line="2" selection-start-column="2862" selection-end-line="2" selection-end-column="2867" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/prdgoodlist.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1892" selection-start-column="1887" selection-end-column="1892" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36156" selection-start-column="36153" selection-end-column="36156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.min(1).css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret column="53817" selection-start-column="53814" selection-end-column="53817" />
+          <folding>
+            <element signature="e#66354#71967#1" expanded="true" />
+            <element signature="e#71983#81089#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/ec.core.base.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret column="6477" selection-start-column="6477" selection-end-column="6477" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bfcouponspc.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/123.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Shopping/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1638">
+          <caret line="127" column="3" selection-start-line="127" selection-start-column="3" selection-end-line="127" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/detailnew2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#38929#38958#0#HTML" expanded="true" />
+            <element signature="e#39111#39191#0#HTML" expanded="true" />
+            <element signature="e#42670#42734#0#HTML" expanded="true" />
+            <element signature="e#173333#174203#0#HTML" />
+            <element signature="e#217465#225184#0#HTML" />
+            <element signature="e#218480#224552#0#HTML" />
+            <element signature="e#364404#416549#0#HTML" />
+            <element signature="e#417988#418010#0#HTML" expanded="true" />
+            <element signature="e#422577#428373#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
