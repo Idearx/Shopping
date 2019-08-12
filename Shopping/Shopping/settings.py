@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Shopping.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Shopping',
+        'NAME': 'day03',
         'HOST':'127.0.0.1',
         'USER':'root',
         'PASSWORD':'123456',
@@ -126,3 +126,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # 配置公共的static静态文件的路径
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# 设置session的过期时间
+MAXAGE = 3 * 24 * 3600

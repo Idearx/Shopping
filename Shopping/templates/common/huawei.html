@@ -329,26 +329,29 @@
                                        onmouseover="this.style.cssText=&#39;color:#e14233;padding: 0 10px;font-size:18px;padding-top:20px;&#39;">华为企业购</a>
                                 </li>
                                 <li>
-                                    <div class="unlogin" style="font-size:18px; padding-left:40px;padding-top:20px;">
-                                        <img src="/static/images/d8e4b611-6163-4613-9b18-195335adfad5.png"
-                                             style="float: left;">
-                                        <a style="margin-right: 8px;" href="{% url 'app:login' %}" data-track="true"
-                                           onclick="window.location.href = loginLink;">登录</a>
-                                        <p class="divid">
-                                            <a style="margin-left: 8px;" href="javascript:;" data-track="true"
-                                               onclick="window.location.href = registerLink;">注册</a>
-                                        </p>
-                                    </div>
-                                    <div class="login hide" style="font-size:18px; padding-left:40px;padding-top:20px;">
-                                        <a href="javascript:;"
-                                           onclick="window.location.href = domainMain+&#39;/member&#39;"
-                                           data-track="true">
-                                            <img src="/static/images/d8e4b611-6163-4613-9b18-195335adfad5.png">
-                                            <span class="loginName"></span>
-                                        </a>
-                                        <a class="signout" href="javascript:;" style="margin-left: 8px;"
-                                           data-track="true">[退出]</a>
-                                    </div>
+                                    {% if 'username' not in request.session %}
+                                        <div class="unlogin" style="font-size:18px; padding-left:40px;padding-top:20px;">
+                                            <img src="/static/images/d8e4b611-6163-4613-9b18-195335adfad5.png"
+                                                 style="float: left;">
+                                            <a style="margin-right: 8px;" href="{% url 'app:login' %}" data-track="true"
+                                               onclick="window.location.href = loginLink;">登录</a>
+                                            <p class="divid">
+                                                <a style="margin-left: 8px;" href="javascript:;" data-track="true"
+                                                   onclick="window.location.href = registerLink;">注册</a>
+                                            </p>
+                                        </div>
+                                    {% else %}
+                                        <div class="login" style="font-size:18px; padding-left:40px;padding-top:20px;">
+                                            <a href="javascript:;"
+                                               onclick="window.location.href = domainMain+&#39;/member&#39;"
+                                               data-track="true">
+                                                <img src="/static/images/d8e4b611-6163-4613-9b18-195335adfad5.png">
+                                                <span class="loginName">{{ request.session.username }}</span>
+                                            </a>
+                                            <a class="signout" href="{% url 'app:logout' %}" style="margin-left: 8px;"
+                                               data-track="true">[退出]</a>
+                                        </div>
+                                    {% endif %}
                                 </li>
                             </ul>
                         </div>
