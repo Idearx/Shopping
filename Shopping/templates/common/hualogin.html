@@ -86,107 +86,127 @@
                     <div class="b-account">
                         <div class="login-form-marginTop">
                             <div class="form-edit-area loginEventForm">
-                                <div class="userAccountLogin-errorTipsDiv" id="errorTip"></div>
-                                <table border="0" cellpadding="0" cellspacing="0">
-                                    <tbody>
-                                    <tr>
-                                        <td class="user-input-tr"><label class="lb_opacity_Class"
-                                                                         style="display: block; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
-                                                                         for="login_userName">
-                                            <div style="border: none; background: transparent; cursor: text; margin: 2px; color: rgb(204, 204, 204);"
-                                                 tabindex="-1" class="text vam">手机号/邮件地址/华为号
-                                            </div>
-                                        </label><input type="text" autocomplete="off" class="text vam"
-                                                       id="login_userName" name="userAccount" maxlength="50"
-                                                       tabindex="1" onfocus="this.removeAttribute(&#39;readonly&#39;);"
-                                                       validator="validator11565429336896" style="z-index: 1;"></td>
-                                    </tr>
+                                <div class="userAccountLogin-errorTipsDiv" id="errorTip">
+                                    {% if testid == 1 %}
+                                        <i class="loginErrorInfo marginR6"></i>
+                                    "帐号或密码错误"
+                                    {% endif %}
+                                </div>
+                                <form action="{% url 'app:login' %}" method="post">
+                                    {% csrf_token %}
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                        <!-- 非短信验证帐号的输入框 -->
+                                        <tr>
+                                            <td class="user-input-tr"><label class="lb_opacity_Class"
+                                                                             style="display: block; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
+                                                                             for="login_userName">
+                                                <div style="border: none; background: transparent; cursor: text; margin: 2px; color: rgb(204, 204, 204);"
+                                                     tabindex="-1" class="text vam">手机号/邮件地址/华为号
+                                                </div>
+                                            </label><input type="text" autocomplete="off" class="text vam"
+                                                           id="login_userName" name="username" maxlength="50"
+                                                           tabindex="1"
+                                                           onfocus="this.removeAttribute(&#39;readonly&#39;);"
+                                                           validator="validator11565429336896" style="z-index: 1;"></td>
+                                        </tr>
+                                         <!-- 非短信验证密码的输入框 -->
+                                        <tr>
+                                            <td class="user-input-tr"><label class="lb_opacity_Class"
+                                                                             style="display: block; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
+                                                                             for="login_password">
+                                                <div style="border: none; background: transparent; cursor: text; margin: 2px; color: rgb(204, 204, 204);"
+                                                     tabindex="-1" class="text vam">密码
+                                                </div>
+                                            </label><input oncut="return false;" oncopy="return false"
+                                                           id="login_password"
+                                                           type="password" autocomplete="off" class="text vam"
+                                                           name="password" maxlength="32" tabindex="2"
+                                                           readonly="readonly"
+                                                           onfocus="this.removeAttribute(&#39;readonly&#39;);"
+                                                           validator="validator21565429336897" style="z-index: 1;"></td>
+                                        </tr>
 
-                                    <tr>
-                                        <td class="user-input-tr"><label class="lb_opacity_Class"
-                                                                         style="display: block; position: absolute; cursor: text; float: left; z-index: 2; padding-left: 0px; padding-top: 0px;"
-                                                                         for="login_password">
-                                            <div style="border: none; background: transparent; cursor: text; margin: 2px; color: rgb(204, 204, 204);"
-                                                 tabindex="-1" class="text vam">密码
-                                            </div>
-                                        </label><input oncut="return false;" oncopy="return false" id="login_password"
-                                                       type="password" autocomplete="off" class="text vam"
-                                                       name="password" maxlength="32" tabindex="2" readonly="readonly"
-                                                       onfocus="this.removeAttribute(&#39;readonly&#39;);"
-                                                       validator="validator21565429336897" style="z-index: 1;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="picAuthCode" class="verify-td referenceTarget">
+                                        <tr>
+                                            <td id="picAuthCode" class="verify-td referenceTarget">
 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="mt-links lineHeightFix" id="operLinkTd">
-                                            <span id="smsLoginEntrance" class="changeLoginType l"
-                                                  data-type="userAccountLogin" title="短信验证码登录"
-                                                  style="visibility: visible;"><i class="phoneIcon marginR6"></i>短信验证码登录</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="mt-links lineHeightFix" id="operLinkTd">
+                                                <span id="smsLoginEntrance" class="changeLoginType l"
+                                                      data-type="userAccountLogin" title="短信验证码登录"
+                                                      style="visibility: visible;"><i class="phoneIcon marginR6"></i>短信验证码登录</span>
 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div style="margin-bottom:0px;"><span class="vam error" id="login_msg"
-                                                                                  style="display:block"></span></div>
-                                            <div class="button-login" id="btnLogin" data-type="accountLogin"
-                                                 tabindex="5">登录
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="mt-checkbox">
-                                            <span id="rememberNameSpan"><input type="checkbox" class="checkbox vam"
-                                                                               id="remember_name" name="remember_name"
-                                                                               tabindex="4"><label
-                                                    for="remember_name"><i id="remember_name_icon"
-                                                                           class="checkBox-icon tick-off-icon marginR6"></i>记住华为帐号</label></span>
-                                            <div class="hidden remeberTip"></div>
-                                            <span class="mt-links-float r clearWidth floatFix referenceTarget_login_more">
-																<a class="btn-primary vam clearWidth" title="更多"
-                                                                   id="btn-more">更多</a>
-																<div class="set-more">
-																	<div id="more_list" class="more-list hiden">
-																			
-																			<ul>
-																				<li id="goConFaq"
-                                                                                    class="bottom_border pop_up_dialog security-menu">遇到问题</li>
-																			</ul>
-																			<ul>
-																				<li id="appealLink"
-                                                                                    class="bottom_border pop_up_dialog security-menu">更换手机号</li>
-																			</ul>
-																			<ul>
-																				<li id="goSecurity"
-                                                                                    class="pop_up_dialog security-menu">安全中心</li>
-																			</ul>
-																		
-																	</div>
-																</div> 
-															</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="mt-links p0">
-                                            <div class="mt-links-float vam clearWidth">
+                                            </td>
+                                        </tr>
+                                        <!-- 非短信验证登录按钮 -->
+                                        <tr>
+                                            <td>
+                                                <div style="margin-bottom:0px;"><span class="vam error" id="login_msg"
+                                                                                      style="display:block"></span>
+                                                </div>
+                                                <div>
+                                                    <input type="submit" class="button-login" id="btnLogin" data-type="accountLogin" tabindex="5" value="登录">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- 非短信验证遇到问题 更换手机号 -->
+                                        <tr>
+                                            <td class="mt-checkbox">
+                                                <span id="rememberNameSpan"><input type="checkbox" class="checkbox vam"
+                                                                                   id="remember_name"
+                                                                                   name="remember_name"
+                                                                                   tabindex="4"><label
+                                                        for="remember_name"><i id="remember_name_icon"
+                                                                               class="checkBox-icon tick-off-icon marginR6"></i>记住华为帐号</label></span>
+                                                <div class="hidden remeberTip"></div>
+                                                <span class="mt-links-float r clearWidth floatFix referenceTarget_login_more">
+                                                                    <a class="btn-primary vam clearWidth" title="更多"
+                                                                       id="btn-more">更多</a>
+                                                                    <div class="set-more">
+                                                                        <div id="more_list" class="more-list hiden">
+
+                                                                                <ul>
+                                                                                    <li id="goConFaq"
+                                                                                        class="bottom_border pop_up_dialog security-menu">遇到问题</li>
+                                                                                </ul>
+                                                                                <ul>
+                                                                                    <li id="appealLink"
+                                                                                        class="bottom_border pop_up_dialog security-menu">更换手机号</li>
+                                                                                </ul>
+                                                                                <ul>
+                                                                                    <li id="goSecurity"
+                                                                                        class="pop_up_dialog security-menu">安全中心</li>
+                                                                                </ul>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- 非短信验证注册帐号 忘记密码 -->
+                                        <tr>
+                                            <td class="mt-links p0">
+                                                <div class="mt-links-float vam clearWidth">
 
 
-                                                <span class="regist"><a id="registText" class="btn-primary clearWidth"
-                                                                        href="https://id1.cloud.huawei.com/CAS/portal/userRegister/regbyphone.html?reqClientType=26&amp;loginChannel=26000000&amp;countryCode=cn&amp;loginUrl=https%3A%2F%2Fid1.cloud.huawei.com%2FCAS%2Fportal%2Flogin.html&amp;service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Fcaslogin%3Furl%3Dhttp%253A%252F%252F127.0.0.1%253A8000%252Fapp%252F&amp;lang=zh-cn&amp;themeName=red"
-                                                                        title="注册帐号">注册帐号</a></span><span
-                                                    class="forgot"><a class="btn-primary clearWidth"
-                                                                      href="javascript:void(0)" onclick="gotoresetpwd()"
-                                                                      title="忘记密码？">忘记密码？</a></span>
+                                                    <span class="regist"><a id="registText"
+                                                                            class="btn-primary clearWidth"
+                                                                            href="https://id1.cloud.huawei.com/CAS/portal/userRegister/regbyphone.html?reqClientType=26&amp;loginChannel=26000000&amp;countryCode=cn&amp;loginUrl=https%3A%2F%2Fid1.cloud.huawei.com%2FCAS%2Fportal%2Flogin.html&amp;service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Fcaslogin%3Furl%3Dhttp%253A%252F%252F127.0.0.1%253A8000%252Fapp%252F&amp;lang=zh-cn&amp;themeName=red"
+                                                                            title="注册帐号">注册帐号</a></span><span
+                                                        class="forgot"><a class="btn-primary clearWidth"
+                                                                          href="javascript:void(0)"
+                                                                          onclick="gotoresetpwd()"
+                                                                          title="忘记密码？">忘记密码？</a></span>
 
 
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
                             </div>
                         </div>
 
@@ -251,7 +271,10 @@
                     <div class="b-account">
                         <div class="login-form-marginTop smsLogin-form">
                             <div class="form-edit-area loginEventForm">
-                                <div class="smsValidateLogin-errorTipsDiv"></div>
+                                <div class="smsValidateLogin-errorTipsDiv">
+                                    <i class="loginErrorInfo marginR6"></i>
+                                    "短信验证码错误"
+                                </div>
                                 <table border="0" cellpadding="0" cellspacing="0">
                                     <tbody>
                                     <tr>
