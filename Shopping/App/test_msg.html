@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+</head>
+<body>
+    <form action="#" method="post">
+
+        <input type="text" name="phonenum" placeholder="输入手机号">
+        <input type="text" name="yzmnum" placeholder="输入验证码">
+
+        <button id="send">发送验证码</button>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
+<script>
+    $('#send').click(function () {
+        console.log($("form").serialize());
+        $.post("{% url 'app:generate_yzm' %}",$('form').serialize(),function (data) {
+          console.log(data)
+        })
+    })
+
+</script>

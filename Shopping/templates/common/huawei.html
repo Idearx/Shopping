@@ -36,7 +36,7 @@
 
         })(window);
     </script>
-    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/huawei_css/common.css">
     <!-- 页头导航  -->
     <style id="hash-2084897472">
         /*页头导航*/
@@ -244,17 +244,17 @@
             text-align: center;
         }
     </style>
-    <link rel="stylesheet" href="/static/css/style.css" id="hash--744495173">
-    <link rel="stylesheet" href="/static/css/prohotlist.css" id="hash--495768610">
-    <link rel="stylesheet" href="/static/css/bfcouponspc.css" id="hash-474600568">
-    <link rel="stylesheet" href="/static/css/animate.css" id="hash--365043358">
-    <link rel="stylesheet" href="/static/css/swiper.css" id="hash--1828270991">
-    <link rel="stylesheet" href="/static/css/prdgoodlist.css" id="hash--1476015162">
-    <link rel="stylesheet" href="/static/css/proscroll3d.css" id="hash-955183406">
-    <link rel="stylesheet" href="/static/css/style(1).css" id="hash-617548706">
-    <script src="/static/js/vmallcn-min.js"></script>
-    <script src="/static/js/h.js"></script>
-    <script src="/static/js/hianalytics.js"></script>
+    <link rel="stylesheet" href="/static/css/huawei_css/style.css" id="hash--744495173">
+    <link rel="stylesheet" href="/static/css/huawei_css/prohotlist.css" id="hash--495768610">
+    <link rel="stylesheet" href="/static/css/huawei_css/bfcouponspc.css" id="hash-474600568">
+    <link rel="stylesheet" href="/static/css/huawei_css/animate.css" id="hash--365043358">
+    <link rel="stylesheet" href="/static/css/huawei_css/swiper.css" id="hash--1828270991">
+    <link rel="stylesheet" href="/static/css/huawei_css/prdgoodlist.css" id="hash--1476015162">
+    <link rel="stylesheet" href="/static/css/huawei_css/proscroll3d.css" id="hash-955183406">
+    <link rel="stylesheet" href="/static/css/huawei_css/style(1).css" id="hash-617548706">
+    <script src="/static/js/huawei_js/vmallcn-min.js"></script>
+    <script src="/static/js/huawei_js/h.js"></script>
+    <script src="/static/js/huawei_js/hianalytics.js"></script>
 </head>
 <body style="background-color:#e3e3e3;">
 <div id="box_tip">
@@ -304,39 +304,34 @@
             <!--设置快速定位id-->
             <div id="part-0" class="hrefs"></div>
             <div class="mod14-carnival-header-wrp" style="background-color:#e4ecea;">
-                <img src="/static/images/ce874af6-e1d0-4892-8c41-b556252d7ae5.jpg">
+                <img src="/static/images/huawei_images/ce874af6-e1d0-4892-8c41-b556252d7ae5.jpg">
                 <!--模块宽度-->
                 <div class="mod14-carnival-header clearfix" style="width:1200px;margin-left:-600px; text-align: left;">
                     <div>
                         <div class="mod14-carnival-menu" style="margin-right:0px">
                             <ul>
                                 <li>
-                                    <a href="https://www.vmall.com/huawei" target="_blank" data-track="true"
+                                    <a href="#" target="_self" data-track="true"
                                        style="color:#fcfcfa;font-size:18px; padding: 0 10px;padding-top:20px;"
                                        onmouseout="this.style.cssText=&#39;color:#fcfcfa;padding: 0 10px;font-size:18px;padding-top:20px;&#39;"
                                        onmouseover="this.style.cssText=&#39;color:#e14233;padding: 0 10px;font-size:18px;padding-top:20px;&#39;">首页</a>
                                 </li>
                                 <li>
-                                    <a href="https://sale.vmall.com/hwsmh.html" target="_blank" data-track="true"
+                                    <a href="#part-5"  data-track="true"
                                        style="color:#fcfcfa;font-size:18px; padding: 0 10px;padding-top:20px;"
                                        onmouseout="this.style.cssText=&#39;color:#fcfcfa;padding: 0 10px;font-size:18px;padding-top:20px;&#39;"
                                        onmouseover="this.style.cssText=&#39;color:#e14233;padding: 0 10px;font-size:18px;padding-top:20px;&#39;">华为数码惠</a>
                                 </li>
-                                <li>
-                                    <a href="https://sale.vmall.com/hw-company.html" target="_blank" data-track="true"
-                                       style="color:#fcfcfa;font-size:18px; padding: 0 10px;padding-top:20px;"
-                                       onmouseout="this.style.cssText=&#39;color:#fcfcfa;padding: 0 10px;font-size:18px;padding-top:20px;&#39;"
-                                       onmouseover="this.style.cssText=&#39;color:#e14233;padding: 0 10px;font-size:18px;padding-top:20px;&#39;">华为企业购</a>
-                                </li>
+
                                 <li>
                                     {% if 'username' not in request.session %}
                                         <div class="unlogin" style="font-size:18px; padding-left:40px;padding-top:20px;">
-                                            <img src="/static/images/d8e4b611-6163-4613-9b18-195335adfad5.png"
+                                            <img src="/static/images/huawei_images/d8e4b611-6163-4613-9b18-195335adfad5.png"
                                                  style="float: left;">
                                             <a style="margin-right: 8px;" href="{% url 'app:login' %}" data-track="true"
                                                onclick="window.location.href = loginLink;">登录</a>
                                             <p class="divid">
-                                                <a style="margin-left: 8px;" href="javascript:;" data-track="true"
+                                                <a style="margin-left: 8px;" href="{% url 'app:register_email' %}" data-track="true"
                                                    onclick="window.location.href = registerLink;">注册</a>
                                             </p>
                                         </div>
@@ -345,7 +340,7 @@
                                             <a href="javascript:;"
                                                onclick="window.location.href = domainMain+&#39;/member&#39;"
                                                data-track="true">
-                                                <img src="/static/images/d8e4b611-6163-4613-9b18-195335adfad5.png">
+                                                <img src="/static/images/huawei_images/d8e4b611-6163-4613-9b18-195335adfad5.png">
                                                 <span class="loginName">{{ request.session.username }}</span>
                                             </a>
                                             <a class="signout" href="{% url 'app:logout' %}" style="margin-left: 8px;"
@@ -360,8 +355,8 @@
             </div>
             <!-- 热点区 -->
             <div class="J_anchors">
-                <a class="J_anchor anchor-hotList" href="https://www.vmall.com/huawei"
-                   style="width:200px; height:60px; left:355.9791259765625px; top:0px;" target="_blank"
+                <a class="J_anchor anchor-hotList" href="#"
+                   style="width:200px; height:60px; left:355.9791259765625px; top:0px;"
                    data-track="true"></a></div>
             <!-- /页头导航 -->
         </div>
@@ -429,7 +424,7 @@
                     <!-- 券链接 -->
                 </div>
                 <div class="mod22-carnival-coupons" style="width:1920px; margin-left:-960px;">
-                    <img src="/static/images/1e37271c-9b53-4f53-9c9b-d405f983a65c.jpg" alt="" style="width:100%;">
+                    <img src="/static/images/huawei_images/1e37271c-9b53-4f53-9c9b-d405f983a65c.jpg" alt="" style="width:100%;">
                 </div>
                 <!-- 一键领券券码，隐藏域 -->
             </div>
@@ -514,7 +509,7 @@
                     <!-- 券链接 -->
                 </div>
                 <div class="mod22-carnival-coupons" style="width:1920px; margin-left:-960px;">
-                    <img src="/static/images/028a3689-0638-4232-8c50-f4b42f4df2b3.jpg" alt="" style="width:100%;">
+                    <img src="/static/images/huawei_images/028a3689-0638-4232-8c50-f4b42f4df2b3.jpg" alt="" style="width:100%;">
                 </div>
                 <!-- 一键领券券码，隐藏域 -->
             </div>
@@ -539,7 +534,7 @@
 
             <!-- navbar 导航栏  手机 笔记本 智能穿戴  的 图片设置位置-->
             <div class="mod27-nav-wrp"
-                 style="height: 60px; background: url(/static/images/navbar.jpg/) center center no-repeat; position: relative; top: 0px;">
+                 style="height: 60px; background: url(/static/images/huawei_images/navbar.jpg/) center center no-repeat; position: relative; top: 0px;">
                 <div class="mod27-nav" style="height:60px;">
                     <ul id="fixedNav" class="clearfix" style="height:60px; width:1200px; line-height:60px;">
                         <li class="current" style="width:20% ; min-width:10%">
@@ -643,7 +638,7 @@
                     <!-- 券链接 -->
                 </div>
                 <div class="mod22-carnival-coupons" style="width:1920px; margin-left:-960px;">
-                    <img src="/static/images/fa8c0135-9fe7-4695-a1a5-4486e1717c2a.jpg" alt="" style="width:100%;">
+                    <img src="/static/images/huawei_images/fa8c0135-9fe7-4695-a1a5-4486e1717c2a.jpg" alt="" style="width:100%;">
                 </div>
                 <!-- 一键领券券码，隐藏域 -->
             </div>
@@ -661,7 +656,7 @@
             <div id="part-1" class="hrefs"></div>
             <div id="popup-content" style="visibility:hidden;height:0;">请输入弹框内容</div>
             <div class="pic-wrap">
-                <img src="/static/images/phone1.jpg" alt="">
+                <img src="/static/images/huawei_images/phone1.jpg" alt="">
             </div>
             <div class="J_anchors">
 
@@ -712,7 +707,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -734,7 +729,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -757,7 +752,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -788,7 +783,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -810,7 +805,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -833,7 +828,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -864,7 +859,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -887,7 +882,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -910,7 +905,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -940,7 +935,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -962,7 +957,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -985,7 +980,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -1015,7 +1010,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -1037,7 +1032,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -1060,7 +1055,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -1090,7 +1085,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -1113,7 +1108,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -1136,7 +1131,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -1168,7 +1163,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -1190,7 +1185,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -1213,7 +1208,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -1244,7 +1239,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -1266,7 +1261,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -1289,7 +1284,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -1320,7 +1315,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -1343,7 +1338,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -1366,7 +1361,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -1465,7 +1460,7 @@
                     <!-- 券链接 -->
                 </div>
                 <div class="mod22-carnival-coupons" style="width:1920px; margin-left:-960px;">
-                    <img src="/static/images/pc1.jpg" alt="" style="width:100%;">
+                    <img src="/static/images/huawei_images/pc1.jpg" alt="" style="width:100%;">
                 </div>
                 <!-- 一键领券券码，隐藏域 -->
             </div>
@@ -1515,7 +1510,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -1537,7 +1532,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -1560,7 +1555,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -1591,7 +1586,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -1613,7 +1608,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -1636,7 +1631,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -1667,7 +1662,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -1690,7 +1685,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -1713,7 +1708,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -1743,7 +1738,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -1765,7 +1760,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -1788,7 +1783,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -1818,7 +1813,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -1840,7 +1835,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -1863,7 +1858,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -1893,7 +1888,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -1916,7 +1911,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -1939,7 +1934,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -1971,7 +1966,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -1993,7 +1988,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -2016,7 +2011,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -2047,7 +2042,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -2069,7 +2064,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -2092,7 +2087,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -2123,7 +2118,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -2146,7 +2141,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -2169,7 +2164,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -2216,7 +2211,7 @@
             <div id="part-3" class="hrefs"></div>
             <div id="popup-content" style="visibility:hidden;height:0;">请输入弹框内容</div>
             <div class="pic-wrap">
-                <img src="/static/images/smart1.jpg" alt="">
+                <img src="/static/images/huawei_images/smart1.jpg" alt="">
             </div>
             <div class="J_anchors">
 
@@ -2267,7 +2262,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -2289,7 +2284,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -2312,7 +2307,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -2343,7 +2338,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -2365,7 +2360,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -2388,7 +2383,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -2419,7 +2414,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -2442,7 +2437,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -2465,7 +2460,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -2495,7 +2490,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -2517,7 +2512,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -2540,7 +2535,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -2570,7 +2565,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -2592,7 +2587,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -2615,7 +2610,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -2645,7 +2640,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -2668,7 +2663,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -2691,7 +2686,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -2723,7 +2718,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -2745,7 +2740,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -2768,7 +2763,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -2799,7 +2794,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -2821,7 +2816,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -2844,7 +2839,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -2875,7 +2870,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -2898,7 +2893,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -2921,7 +2916,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -2968,7 +2963,7 @@
             <div id="part-4" class="hrefs"></div>
             <div id="popup-content" style="visibility:hidden;height:0;">请输入弹框内容</div>
             <div class="pic-wrap">
-                <img src="/static/images/hot1.jpg" alt="">
+                <img src="/static/images/huawei_images/hot1.jpg" alt="">
             </div>
             <div class="J_anchors">
 
@@ -4003,7 +3998,7 @@
             <div id="part-5" class="hrefs"></div>
             <div id="popup-content" style="visibility:hidden;height:0;">请输入弹框内容</div>
             <div class="pic-wrap">
-                <img src="/static/images/634443cb-e489-45a5-a975-6fe0c445eecb.jpg" alt="">
+                <img src="/static/images/huawei_images/634443cb-e489-45a5-a975-6fe0c445eecb.jpg" alt="">
             </div>
             <div class="J_anchors">
 
@@ -4054,7 +4049,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -4076,7 +4071,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -4099,7 +4094,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -4130,7 +4125,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -4152,7 +4147,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -4175,7 +4170,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -4206,7 +4201,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -4229,7 +4224,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -4252,7 +4247,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -4282,7 +4277,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -4304,7 +4299,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -4327,7 +4322,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -4357,7 +4352,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -4379,7 +4374,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -4402,7 +4397,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -4432,7 +4427,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -4455,7 +4450,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -4478,7 +4473,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -4510,7 +4505,7 @@
                                     <a href="https://www.vmall.com/product/10086749611489.html#10086567817541"
                                        data-track="1" data-sbomcode="2701010008402" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554812127151mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554812127151mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为畅享平板 10.1英寸</div>
@@ -4532,7 +4527,7 @@
                                     <a href="https://www.vmall.com/product/10086423109158.html#10086794601109"
                                        data-track="1" data-sbomcode="3102060003501" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1545040924753mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1545040924753mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为AI音箱</div>
@@ -4555,7 +4550,7 @@
                                     <a href="https://www.vmall.com/product/10086042311676.html#10086146034246"
                                        data-track="1" data-sbomcode="3001010013901" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1557974810213mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1557974810213mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为路由WS5200四核版</div>
@@ -4586,7 +4581,7 @@
                                     <a href="https://www.vmall.com/product/10086588896125.html#10086039032969"
                                        data-track="1" data-sbomcode="2701010012002" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811550801mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811550801mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为平板 M5 青春版</div>
@@ -4608,7 +4603,7 @@
                                     <a href="https://www.vmall.com/product/10086345874813.html#10086835367334"
                                        data-track="1" data-sbomcode="3102020008101" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1542788193444mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1542788193444mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为车载充电器SuperCharge快充版</div>
@@ -4631,7 +4626,7 @@
                                     <a href="https://www.vmall.com/product/10086687727933.html#10086858982353"
                                        data-track="1" data-sbomcode="3102020008201" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1554811299622mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1554811299622mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为无线充电器（Max 15W）白色</div>
@@ -4662,7 +4657,7 @@
                                     <a href="https://www.vmall.com/product/10086780319057.html#10086350539891"
                                        data-track="1" data-sbomcode="3102010011502" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553601252627mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553601252627mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">华为40W超级快充移动电源</div>
@@ -4685,7 +4680,7 @@
                                     <a href="https://www.vmall.com/product/10086736167198.html#10086844294281"
                                        data-track="1" data-sbomcode="3101010031801" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1553847048448mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1553847048448mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI P30 Pro潜水保护壳</div>
@@ -4708,7 +4703,7 @@
                                     <a href="https://www.vmall.com/product/10086591165474.html#10086870964975"
                                        data-track="1" data-sbomcode="3101010018301" target="_blank">
                                         <div class="item-img">
-                                            <img class="prodct-img" src="/static/images/428_428_1539251018774mp.png">
+                                            <img class="prodct-img" src="/static/images/huawei_images/428_428_1539251018774mp.png">
                                         </div>
                                     </a>
                                     <div class="item-title">HUAWEI Mate 20 Pro 潜水保护壳</div>
@@ -4752,7 +4747,7 @@
             <!-- 图模块 -->
             <div id="popup-content" style="visibility:hidden;height:0;">请输入弹框内容</div>
             <div class="pic-wrap">
-                <img src="/static/images/48415a82-91b1-49d8-be40-fc3a28584c1a.jpg" alt="">
+                <img src="/static/images/huawei_images/48415a82-91b1-49d8-be40-fc3a28584c1a.jpg" alt="">
             </div>
             <div class="J_anchors">
 
@@ -4768,31 +4763,31 @@
 
 </div>
 </div>
-<script src="/static/js/jquery-1.11.1.min.js"></script>
-<script src="/static/js/config-pc.js"></script>
-<script src="/static/js/zh-CN.js"></script>
-<script src="/static/js/utils.js"></script>
+<script src="/static/js/huawei_js/jquery-1.11.1.min.js"></script>
+<script src="/static/js/huawei_js/config-pc.js"></script>
+<script src="/static/js/huawei_js/zh-CN.js"></script>
+<script src="/static/js/huawei_js/utils.js"></script>
 
 <!--app 预览页引入js -->
 
 <script id="hash--934212465">$('.mod-prohotlist').on('click', '.get_coupons', function (event) {
     utils.getCouponMulti(event, this);
 });</script>
-<script src="/static/js/nav-top.js" id="hash--1784214853"></script>
-<script src="/static/js/coupon-pic.js" id="hash--997897065"></script>
-<script src="/static/js/nav-fixed.js" id="hash-555548793"></script>
-<script src="/static/js/jquery.nicescroll.min.js" id="hash--33923760"></script>
-<script src="/static/js/pictures.js" id="hash-1640994263"></script>
-<script src="/static/js/swiper.js" id="hash--1256201565"></script>
-<script src="/static/js/jquery.fly.min.js" id="hash-527159474"></script>
-<script src="/static/js/proscroll3d.js" id="hash--544634486"></script>
-<script src="/static/js/coupon-siq.js" id="hash-2069944689"></script>
-<script src="/static/js/flip-vendor.js" id="hash-1982458755"></script>
-<script src="/static/js/flip.js" id="hash-1479133413"></script>
-<iframe src="javascript:false" style="display: none;" src="/static/js/saved_resource.html"></iframe>
-<script src="/static/js/dataStdId" async="" id="dmpaId"></script>
-<script src="/static/js/dmpa-min.js" async="" id="dmpa"></script>
-<script src="/static/js/report.js" id="hash-2018553179"></script>
+<script src="/static/js/huawei_js/nav-top.js" id="hash--1784214853"></script>
+<script src="/static/js/huawei_js/coupon-pic.js" id="hash--997897065"></script>
+<script src="/static/js/huawei_js/nav-fixed.js" id="hash-555548793"></script>
+<script src="/static/js/huawei_js/jquery.nicescroll.min.js" id="hash--33923760"></script>
+<script src="/static/js/huawei_js/pictures.js" id="hash-1640994263"></script>
+<script src="/static/js/huawei_js/swiper.js" id="hash--1256201565"></script>
+<script src="/static/js/huawei_js/jquery.fly.min.js" id="hash-527159474"></script>
+<script src="/static/js/huawei_js/proscroll3d.js" id="hash--544634486"></script>
+<script src="/static/js/huawei_js/coupon-siq.js" id="hash-2069944689"></script>
+<script src="/static/js/huawei_js/flip-vendor.js" id="hash-1982458755"></script>
+<script src="/static/js/huawei_js/flip.js" id="hash-1479133413"></script>
+<iframe src="javascript:false" style="display: none;" src="/static/js/huawei_js/saved_resource.html"></iframe>
+<script src="/static/js/huawei_js/dataStdId" async="" id="dmpaId"></script>
+<script src="/static/js/huawei_js/dmpa-min.js" async="" id="dmpa"></script>
+<script src="/static/js/huawei_js/report.js" id="hash-2018553179"></script>
 
 
 </body>

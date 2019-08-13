@@ -78,11 +78,17 @@ WSGI_APPLICATION = 'Shopping.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'day03',
-        'HOST':'127.0.0.1',
+        'NAME': 'hw_db',
+        'HOST':'10.0.108.97',
         'USER':'root',
-        'PASSWORD':'123456',
+        'PASSWORD':'1030',
         'PORT':3306
+    # 'ENGINE': 'django.db.backends.mysql',
+    #         'NAME': 'day03',
+    #         'HOST':'127.0.0.1',
+    #         'USER':'root',
+    #         'PASSWORD':'123456',
+    #         'PORT':3306
     }
 }
 
@@ -129,3 +135,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # 设置session的过期时间
 MAXAGE = 3 * 24 * 3600
+
+# 阿里云短信验证码配置
+SMS_CONFIG = {
+    'ACCESS_KEY_ID':'LTAIDHOYSjYcvyVt',
+    'ACCESS_KEY_SECRET':'qrEgykmXX4e6GUMFOqzuiLZ5gsUxSC',
+    'SignName':"成少雷",
+    'TemplateCode':"SMS_102315005"
+}
