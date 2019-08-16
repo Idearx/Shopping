@@ -79,16 +79,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hw_db',
-        'HOST':'10.0.108.97',
+        'HOST':'10.0.108.121',
         'USER':'root',
-        'PASSWORD':'1030',
+        'PASSWORD':'123456',
         'PORT':3306
     # 'ENGINE': 'django.db.backends.mysql',
-    #         'NAME': 'day03',
-    #         'HOST':'127.0.0.1',
-    #         'USER':'root',
-    #         'PASSWORD':'123456',
-    #         'PORT':3306
+    # 'NAME': 'day03',
+    # 'HOST':'127.0.0.1',
+    # 'USER':'root',
+    # 'PASSWORD':'123456',
+    # 'PORT':3306
     }
 }
 
@@ -123,7 +123,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -143,3 +143,10 @@ SMS_CONFIG = {
     'SignName':"成少雷",
     'TemplateCode':"SMS_102315005"
 }
+
+# 发送邮件配置
+EMAIL_HOST = 'smtp.126.com'
+# EMAIL_PORT = 25
+EMAIL_HOST_USER = 'landmark_csl@126.com'
+EMAIL_HOST_PASSWORD = 'land123'
+EMAIL_FROM = 'python<landmark_csl@126.com>'

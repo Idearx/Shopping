@@ -31,6 +31,7 @@ class Cart(models.Model):
     gid = models.IntegerField()
     buynum = models.IntegerField(blank=True, null=True)
     isbuy = models.IntegerField(blank=True, null=True)
+    count = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -82,6 +83,7 @@ class Imgs(models.Model):
     imgurl = models.CharField(max_length=200)
     gid = models.IntegerField(blank=True, null=True)
     rid = models.IntegerField(blank=True, null=True)
+    goodname = models.CharField(max_length=200)
 
     class Meta:
         managed = False

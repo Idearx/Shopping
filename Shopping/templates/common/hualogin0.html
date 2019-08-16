@@ -74,22 +74,19 @@
 
 
                 <div class="userAccountLogin">
-
                     <div class="h">
-
-
                         <span class="loginTitle actived loginTitle-left" data-type="account">帐号登录</span>
-
-
                     </div>
-
                     <div class="b-account">
                         <div class="login-form-marginTop">
                             <div class="form-edit-area loginEventForm">
                                 <div class="userAccountLogin-errorTipsDiv" id="errorTip">
-                                    {% if testid == 1 %}
+                                    {% if testid == 1 or testid == 2 %}
                                         <i class="loginErrorInfo marginR6"></i>
                                     帐号或密码错误
+                                    {% elif testid == 3 %}
+                                    <i class="loginErrorInfo marginR6"></i>
+                                    您的帐号还未注册，请先注册！
                                     {% endif %}
                                 </div>
                                 <form action="{% url 'app:login' %}" method="post">
@@ -195,10 +192,10 @@
 
                                                     <span class="regist"><a id="registText"
                                                                             class="btn-primary clearWidth"
-                                                                            href="https://id1.cloud.huawei.com/CAS/portal/userRegister/regbyphone.html?reqClientType=26&amp;loginChannel=26000000&amp;countryCode=cn&amp;loginUrl=https%3A%2F%2Fid1.cloud.huawei.com%2FCAS%2Fportal%2Flogin.html&amp;service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Fcaslogin%3Furl%3Dhttp%253A%252F%252F127.0.0.1%253A8000%252Fapp%252F&amp;lang=zh-cn&amp;themeName=red"
+                                                                            href="{% url 'app:register_phone' %}"
                                                                             title="注册帐号">注册帐号</a></span><span
                                                         class="forgot"><a class="btn-primary clearWidth"
-                                                                          href="javascript:void(0)"
+                                                                          href="{% url 'app:find_password' %}"
                                                                           onclick="gotoresetpwd()"
                                                                           title="忘记密码？">忘记密码？</a></span>
 
@@ -212,10 +209,8 @@
                             </div>
                         </div>
                         <div class="thirdLoginBlock">
-
                             <div class="thirdLintTitle"><i class="line-left"></i><span
                                     class="third-tips">其他方式登录</span><i class="line-right rotateImg"></i></div>
-
                             <div class="thirdLoginDiv"><span class="qqLogin_bigIco" title="QQ"
                                                              onclick="thirdAccountBind(this)"><a
                                     href="javascript:void(0);" tourl="/qq/authorize"><s></s></a></span><span
@@ -235,12 +230,15 @@
                         <div class="login-form-marginTop smsLogin-form">
                             <div class="form-edit-area loginEventForm">
                                 <div class="smsValidateLogin-errorTipsDiv">
-                                    {% if testid == 1 %}
+                                    {% if testid == 2 %}
                                     <i class="loginErrorInfo marginR6"></i>
                                     短信验证码错误
+                                    {% elif testid == 3 %}
+                                    <i class="loginErrorInfo marginR6"></i>
+                                    您的帐号还未注册，请先注册！
                                     {% endif %}
                                 </div>
-                                <form action="{% url 'app:login' %}" method="post">
+                                <form action="{% url 'app:login_phone' %}" method="post">
                                     {% csrf_token %}
                                     <table border="0" cellpadding="0" cellspacing="0">
                                         <tbody>
@@ -383,6 +381,7 @@
 </div>
 
 <script type="text/javascript">
+    {# 发送手机验证码#}
     $("#getSmsRandomCode").click(function () {
         console.log($("form").serialize());
         $.post("{% url 'app:generate_yzm' %}",$('form').serialize(),function (data) {
