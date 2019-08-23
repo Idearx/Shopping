@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>后台管理</title>
+		<style>
+			#write{
+				width:400px;
+				height:500px;
+				background-color: white;
+				margin: 6% auto;
+				box-shadow: darkgray 0px 0px 5px 1px ;
+
+			}
+			#top{
+				font-family: "黑体";
+				font-size: 50px;
+				color: crimson;
+				position: relative;
+				top: 40px;
+				left: 30px;
+
+			}
+			#write_1{
+				width: 100%;
+				height: 20%;
+
+			}
+			#write_1_ziti{
+				margin:0 auto;
+				font-size: 20px;
+
+				width: 60px;
+				height:35px ;
+				text-align: center;
+				position: relative;
+				top:30px;
+			}
+			#write_2{
+				width: 100%;
+				height: 50%;
+				/* background-color: aqua; */
+			}
+			#wenben_1{
+				background-color: aliceblue;
+				width:80%;
+				height: 35px;
+				margin-left:38px;
+				border-radius: 10px 10px 0px 0px;
+			}
+			#wenben_2{
+				background-color: aliceblue;
+				width:80%;
+				height: 35px;
+				margin-left:38px;
+				border-radius: 0px 0px 10px 10px;
+			}
+			#wenti:hover{
+				color: #A9A9A9;
+
+			}
+			#denglu{
+				background-color: blue;
+				width:80%;
+				height: 50px;
+				margin-left:38px;
+				border-radius: 10px 10px 10px 10px;
+			}
+			#write_3_1{
+				text-align: center;
+				font-size: 15px;
+			}
+			#write_3_2{
+				margin-left: 70px;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body bgcolor="beige">
+		<div id="top">
+			<!--<b>后台</b>-->
+		</div>
+		<div id="write">
+			<div id="write_1">
+				<div id="write_1_ziti">
+					<a href="#" style="text-decoration: none;color: red;" >登 陆</a>
+				</div>
+			</div>
+			<div id="write_2">
+				<form action="{% url 'admin:manager_login' %}" method="post">
+                    {% csrf_token %}
+					<input type="text" name="username" id="wenben_1" placeholder="手机号或邮箱"/><br>
+					<input type="password" name="password"id="wenben_2" placeholder="密码"/><br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="isstudent" value="1">&nbsp;记住我
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="wenti">登陆遇到问题？</span>
+					<br /><br />
+{#					<button id="denglu">登陆</button>#}
+                    <input type="submit" id="denglu" value="登录">
+
+				</form>
+
+			</div>
+{#			<div id="write_3">#}
+{#				<div id="write_3_1">#}
+{#					<span>—————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;社交账号登陆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—————</span>#}
+{#				</div>#}
+{#				<div id="write_3_2">#}
+{#					<a href="https://www.baidu.com"><input type="image" src="img/截图.png" /></a>#}
+{#				</div>#}
+{#				#}
+{#			</div>#}
+		</div>
+	</body>
+</html>

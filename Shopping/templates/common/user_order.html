@@ -1,0 +1,739 @@
+{% extends 'common/user0.html' %}
+{% block head %}
+    {{ block.super }}
+    <style>
+        #ordercont .noshow {
+            display: none;
+        }
+
+        #ordercont .show {
+            display: block;
+        }
+    </style>
+{% endblock %}
+{% block right %}
+    <div class="fr u-4-5"><!-- 20141212-栏目-start -->
+        <div class="section-header">
+            <div class="fl">
+                <h2><span>我的订单</span></h2>
+            </div>
+            <div class="fr">
+                <div class="ec-tab" id="ec-tab">
+                    <ul id="ordertime">
+                        <li class="current"><a href="javascript:;"><span>最近六月内订单<em
+                                id="count-seltime-0"></em></span></a></li>
+                        <li><a href="javascript:;"><span>六个月前订单<em
+                                id="count-seltime-1"></em></span></a></li>
+                    </ul>
+                    <div class="ec-tab-arrow" style="width: 122px; left: 0px;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 20141212-栏目-end -->
+        <!-- 20141222-我的订单-订单类别-start -->
+        <div class="myOrder-cate" id="myOrder-cate">
+            <ul id="status">
+                <li class="current"><a href="javascript:;"><span>全部有效订单<em></em></span></a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+				<span>待支付
+                    {% if to_be_paid > 0 %}
+                        <em id="count-seltime-2" data-num="{{ to_be_paid }}">{{ to_be_paid }}</em>
+                    {% else %}
+                        <em id="count-seltime-2" class="hide" data-num="0">0</em>
+                    {% endif %}
+				</span>
+                    </a>
+                </li>
+
+                <li><a href="javascript:;"><span>待评价
+                    {% if to_be_comment > 0 %}
+                        <em id="" data-num="{{ to_be_comment }}">{{ to_be_comment }}</em>
+                    {% else %}
+                        <em id="nocommentNum"></em>
+                    {% endif %}
+                </span></a></li>
+                <li><a href="javascript:;"><span>待收货
+                    {% if to_be_receive > 0 %}
+                        <em id="count-seltime-3" data-num="{{ to_be_receive }}">{{ to_be_receive }}</em>
+                    {% else %}
+                        <em id="count-seltime-3" class="hide" data-num="0">0</em>
+                    {% endif %}
+                </span></a></li>
+                <li><a href="javascript:;"><span>已完成</span></a>
+                </li>
+                <li><a href="javascript:;"><span>已取消</span></a>
+                </li>
+            </ul>
+        </div>
+        <script>
+            function imgError(img) {
+                img.onerror = null;
+                img.src = ol.libPath + "../../images/echannel/loading/mask.png";
+                return true;
+            }
+        </script>
+        <!-- 20141222-我的订单-订单类别-end -->
+        <!-- 20141222-我的订单-列表-start -->
+        <div class="myOrder-record" id="myOrders-list-content">
+            <!-- 20141222-我的订单-列表-订单合并-start -->
+            <div class="myOrder-control hide" id="myOrder-control-bottom-up">
+                <label class="inputbox" for="checkAllBox">
+                    <input class="checkbox" type="checkbox" id="checkAllBox" name="checkAllBox"/><span>全选</span>
+                </label>
+                <a href="javascript:;" class="button-operate-merge-pay" id="topButton"
+                   onclick="ec.member.orderList.mergePay();"><span>合并支付</span></a>
+            </div>
+            <!-- 20141222-我的订单-列表-订单合并-end -->
+            <div class="list-group-title">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th class="col-pro">商品</th>
+                        <th class="col-price">单价/元</th>
+                        <th class="col-quty">数量</th>
+                        <th class="col-pay">实付款/元</th>
+                        <th class="col-operate">订单状态及操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div id="ordercont">
+                <div class="list-group show" id="list-group">
+                    {% if allcount > 0 %}
+                        {% for order,good in allord.items %}
+                            <div class="list-group-item">
+                                <div class="o-info">
+                                    <div class="col-info"><span class="o-date">{{ order.ordtime }}</span><span
+                                            class="o-no">订单号：<a
+                                            onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                            href="javascript:;" title="11570268226">{{ order.ordernum }}</a></span>
+                                    </div>
+                                    <div class="col-state">{{ order.status }}</div>
+                                </div>
+                                <div class="o-pro">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+{#                                        {% for good in allgoods %}#}
+{#                                            {% if good.gid == order.gid %}#}
+                                                <tr>
+                                                    <td class="col-pro-img"><p class="p-img"><a
+                                                            title="{{ good.goodname }}"
+                                                            href="{% url 'app:detail' %}" target="_blank"
+                                                            onclick="pushProMsg(10086106925758,'300130101')"><img
+                                                            class="nocomment-2601010102602"
+                                                            alt="{{ good.goodname }}"
+                                                            src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                                    </p></td>
+                                                    <td class="col-pro-info"><p class="p-name"><a
+                                                            title="{{ good.goodname }}"
+                                                            target="_blank" class="nocomment-2601010102602"
+                                                            href="{% url 'app:detail' %}"
+                                                            onclick="pushProMsg(10086106925758,'300130101')">{{ good.goodname }}</a>
+                                                    </p></td>
+                                                    <td class="col-price"><em>¥</em><span>{{ good.price }}</span></td>
+                                                    <td class="col-quty">{{ order.buynum }}</td>
+                                                    <td rowspan="4" class="col-pay"><p><span>{{ good.price }}</span></p>
+                                                    </td>
+                                                    <td rowspan="4" class="col-operate"><p class="p-link"><a
+                                                            href="javascript:;"
+                                                            onclick="ec.member.orderList.del(this,'11570268226');">删除订单</a>
+                                                    </p>
+                                                        <p class="p-link"><a
+                                                                onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                                                href="javascript:;">订单详情</a></p></td>
+                                                </tr>
+{#                                            {% endif %}#}
+{#                                        {% endfor %}#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="list-group-empty">您暂时没有相关记录。1</div>
+                    {% endif %}
+                </div>
+                <div class="list-group noshow" id="list-group">
+                    {% if to_be_paid > 0 %}
+                        {% for order,good in paidord.items %}
+                            <div class="list-group-item">
+                                <div class="o-info">
+                                    <div class="col-info"><span class="o-date">{{ order.ordtime }}</span><span
+                                            class="o-no">订单号：<a
+                                            onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                            href="javascript:;" title="11570268226">{{ order.ordernum }}</a></span>
+                                    </div>
+                                    <div class="col-state">{{ order.status }}</div>
+                                </div>
+                                <div class="o-pro">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+{#                                        {% for good in paid_goods %}#}
+{#                                            {% if good.gid == order.gid %}#}
+                                                <tr>
+                                                    <td class="col-pro-img"><p class="p-img"><a
+                                                            title="{{ good.goodname }}"
+                                                            href="{% url 'app:detail' %}" target="_blank"
+                                                            onclick="pushProMsg(10086106925758,'300130101')"><img
+                                                            class="nocomment-2601010102602"
+                                                            alt="{{ good.goodname }}"
+                                                            src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                                    </p></td>
+                                                    <td class="col-pro-info"><p class="p-name"><a
+                                                            title="{{ good.goodname }}"
+                                                            target="_blank" class="nocomment-2601010102602"
+                                                            href="{% url 'app:detail' %}"
+                                                            onclick="pushProMsg(10086106925758,'300130101')">{{ good.goodname }}</a>
+                                                    </p></td>
+                                                    <td class="col-price"><em>¥</em><span>{{ good.price }}</span></td>
+                                                    <td class="col-quty">{{ order.buynum }}</td>
+                                                    <td rowspan="4" class="col-pay"><p><span>{{ good.price }}</span></p>
+                                                    </td>
+                                                    <td rowspan="4" class="col-operate"><p class="p-link"><a
+                                                            href="javascript:;"
+                                                            onclick="ec.member.orderList.del(this,'11570268226');">删除订单</a>
+                                                    </p>
+                                                        <p class="p-link"><a
+                                                                onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                                                href="javascript:;">订单详情</a></p></td>
+                                                </tr>
+{#                                            {% endif %}#}
+{#                                        {% endfor %}#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="list-group-empty">您暂时没有相关记录。2</div>
+                    {% endif %}
+                </div>
+                <div class="list-group noshow" id="list-group">
+                    {% if to_be_comment > 0 %}
+                        {% for order,good in commentord.items %}
+                            <div class="list-group-item">
+                                <div class="o-info">
+                                    <div class="col-info"><span class="o-date">{{ order.ordtime }}</span><span
+                                            class="o-no">订单号：<a
+                                            onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                            href="javascript:;" title="11570268226">{{ order.ordernum }}</a></span>
+                                    </div>
+                                    <div class="col-state">{{ order.status }}</div>
+                                </div>
+                                <div class="o-pro">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+{#                                        {% for good in comment_goods %}#}
+{#                                            {% if good.gid == order.gid %}#}
+                                                <tr>
+                                                    <td class="col-pro-img"><p class="p-img"><a
+                                                            title="{{ good.goodname }}"
+                                                            href="{% url 'app:detail' %}" target="_blank"
+                                                            onclick="pushProMsg(10086106925758,'300130101')"><img
+                                                            class="nocomment-2601010102602"
+                                                            alt="{{ good.goodname }}"
+                                                            src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                                    </p></td>
+                                                    <td class="col-pro-info"><p class="p-name"><a
+                                                            title="{{ good.goodname }}"
+                                                            target="_blank" class="nocomment-2601010102602"
+                                                            href="{% url 'app:detail' %}"
+                                                            onclick="pushProMsg(10086106925758,'300130101')">{{ good.goodname }}</a>
+                                                    </p></td>
+                                                    <td class="col-price"><em>¥</em><span>{{ good.price }}</span></td>
+                                                    <td class="col-quty">{{ order.buynum }}</td>
+                                                    <td rowspan="4" class="col-pay"><p><span>{{ good.price }}</span></p>
+                                                    </td>
+                                                    <td rowspan="4" class="col-operate"><p class="p-link"><a
+                                                            href="javascript:;"
+                                                            onclick="ec.member.orderList.del(this,'11570268226');">删除订单</a>
+                                                    </p>
+                                                        <p class="p-link"><a
+                                                                onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                                                href="javascript:;">订单详情</a></p></td>
+                                                </tr>
+
+{#                                            {% endif %}#}
+{#                                        {% endfor %}#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="list-group-empty">您暂时没有相关记录。3</div>
+                    {% endif %}
+                </div>
+                <div class="list-group noshow" id="list-group">
+                    {% if to_be_receive > 0 %}
+                        {% for order,good in receiveord.items %}
+                            <div class="list-group-item">
+                                <div class="o-info">
+                                    <div class="col-info"><span class="o-date">{{ order.ordtime }}</span><span
+                                            class="o-no">订单号：<a
+                                            onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                            href="javascript:;" title="11570268226">{{ order.ordernum }}</a></span>
+                                    </div>
+                                    <div class="col-state">{{ order.status }}</div>
+                                </div>
+                                <div class="o-pro">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+{#                                        {% for good in receive_goods %}#}
+{#                                            {% if good.gid == order.gid %}#}
+                                                <tr>
+                                                    <td class="col-pro-img"><p class="p-img"><a
+                                                            title="{{ good.goodname }}"
+                                                            href="{% url 'app:detail' %}" target="_blank"
+                                                            onclick="pushProMsg(10086106925758,'300130101')"><img
+                                                            class="nocomment-2601010102602"
+                                                            alt="{{ good.goodname }}"
+                                                            src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                                    </p></td>
+                                                    <td class="col-pro-info"><p class="p-name"><a
+                                                            title="{{ good.goodname }}"
+                                                            target="_blank" class="nocomment-2601010102602"
+                                                            href="{% url 'app:detail' %}"
+                                                            onclick="pushProMsg(10086106925758,'300130101')">{{ good.goodname }}</a>
+                                                    </p></td>
+                                                    <td class="col-price"><em>¥</em><span>{{ good.price }}</span></td>
+                                                    <td class="col-quty">{{ order.buynum }}</td>
+                                                    <td rowspan="4" class="col-pay"><p><span>{{ good.price }}</span></p>
+                                                    </td>
+                                                    <td rowspan="4" class="col-operate"><p class="p-link"><a
+                                                            href="javascript:;"
+                                                            onclick="ec.member.orderList.del(this,'11570268226');">删除订单</a>
+                                                    </p>
+                                                        <p class="p-link"><a
+                                                                onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                                                href="javascript:;">订单详情</a></p></td>
+                                                </tr>
+
+{#                                            {% endif %}#}
+{#                                        {% endfor %}#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="list-group-empty">您暂时没有相关记录。4</div>
+                    {% endif %}
+                </div>
+                <div class="list-group noshow" id="list-group">
+                    {% if to_be_finish > 0 %}
+                        {% for order, good in finishord.items %}
+                            <div class="list-group-item">
+                                <div class="o-info">
+                                    <div class="col-info"><span class="o-date">{{ order.ordtime }}</span><span
+                                            class="o-no">订单号：<a
+                                            onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                            href="javascript:;" title="11570268226">{{ order.ordernum }}</a></span>
+                                    </div>
+                                    <div class="col-state">{{ order.status }}</div>
+                                </div>
+                                <div class="o-pro">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+{#                                        {% for good in finish_goods %}#}
+{#                                            {% if good.gid == order.gid %}#}
+                                                <tr>
+                                                    <td class="col-pro-img"><p class="p-img"><a
+                                                            title="{{ good.goodname }}"
+                                                            href="{% url 'app:detail' %}" target="_blank"
+                                                            onclick="pushProMsg(10086106925758,'300130101')"><img
+                                                            class="nocomment-2601010102602"
+                                                            alt="{{ good.goodname }}"
+                                                            src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                                    </p></td>
+                                                    <td class="col-pro-info"><p class="p-name"><a
+                                                            title="{{ good.goodname }}"
+                                                            target="_blank" class="nocomment-2601010102602"
+                                                            href="{% url 'app:detail' %}"
+                                                            onclick="pushProMsg(10086106925758,'300130101')">{{ good.goodname }}</a>
+                                                    </p></td>
+                                                    <td class="col-price"><em>¥</em><span>{{ good.price }}</span></td>
+                                                    <td class="col-quty">{{ order.buynum }}</td>
+                                                    <td rowspan="4" class="col-pay"><p><span>{{ good.price }}</span></p>
+                                                    </td>
+                                                    <td rowspan="4" class="col-operate"><p class="p-link"><a
+                                                            href="javascript:;"
+                                                            onclick="ec.member.orderList.del(this,'11570268226');">删除订单</a>
+                                                    </p>
+                                                        <p class="p-link"><a
+                                                                onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                                                href="javascript:;">订单详情</a></p></td>
+                                                </tr>
+
+{#                                            {% endif %}#}
+{#                                        {% endfor %}#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="list-group-empty">您暂时没有相关记录。5</div>
+                    {% endif %}
+                </div>
+                <div class="list-group noshow" id="list-group">
+                    {% if to_be_cancel > 0 %}
+                        {% for order,good in cancelord %}
+                            <div class="list-group-item">
+                                <div class="o-info">
+                                    <div class="col-info"><span class="o-date">{{ order.ordtime }}</span><span
+                                            class="o-no">订单号：<a
+                                            onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                            href="javascript:;" title="11570268226">{{ order.ordernum }}</a></span>
+                                    </div>
+                                    <div class="col-state">{{ order.status }}</div>
+                                </div>
+                                <div class="o-pro">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+{#                                        {% for good in cancel_goods %}#}
+{#                                            {% if good.gid == order.gid %}#}
+                                                <tr>
+                                                    <td class="col-pro-img"><p class="p-img"><a
+                                                            title="{{ good.goodname }}"
+                                                            href="{% url 'app:detail' %}" target="_blank"
+                                                            onclick="pushProMsg(10086106925758,'300130101')"><img
+                                                            class="nocomment-2601010102602"
+                                                            alt="{{ good.goodname }}"
+                                                            src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                                    </p></td>
+                                                    <td class="col-pro-info"><p class="p-name"><a
+                                                            title="{{ good.goodname }}"
+                                                            target="_blank" class="nocomment-2601010102602"
+                                                            href="{% url 'app:detail' %}"
+                                                            onclick="pushProMsg(10086106925758,'300130101')">{{ good.goodname }}</a>
+                                                    </p></td>
+                                                    <td class="col-price"><em>¥</em><span>{{ good.price }}</span></td>
+                                                    <td class="col-quty">{{ order.buynum }}</td>
+                                                    <td rowspan="4" class="col-pay"><p><span>{{ good.price }}</span></p>
+                                                    </td>
+                                                    <td rowspan="4" class="col-operate"><p class="p-link"><a
+                                                            href="javascript:;"
+                                                            onclick="ec.member.orderList.del(this,'11570268226');">删除订单</a>
+                                                    </p>
+                                                        <p class="p-link"><a
+                                                                onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                                                href="javascript:;">订单详情</a></p></td>
+                                                </tr>
+
+{#                                            {% endif %}#}
+{#                                        {% endfor %}#}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="list-group-empty">您暂时没有相关记录。6</div>
+                    {% endif %}
+                </div>
+
+            </div>
+
+
+            <!-- 20141222-我的订单-列表-订单合并-start -->
+            <div class="myOrder-control hide" id="myOrder-control-bottom">
+                <label class="inputbox" id="bottomCheckBoxDiv" name="bottomCheckBoxDiv">
+                    <!-- 20140819-我的订单-合并付款-start -->
+                    <input type="checkbox" class="checkbox" id="bottomCheckAllBox"
+                           name="bottomCheckAllBox"/><span>全选</span>
+                    <!-- 20140819-我的订单-合并付款-end -->
+                </label>
+                <a href="javascript:;" class="button-operate-merge-pay" id="bottomButton"
+                   onclick="ec.member.orderList.mergePay();"><span>合并支付</span></a>
+            </div>
+            <!-- 20141222-我的订单-列表-订单合并-end -->
+            <div class="list-group-page">
+                <div class="pager" id="list-pager"></div>
+            </div>
+        </div>
+
+
+        <!-- 20141222-我的订单-列表-end -->
+        {#        <input type="hidden" id="colid" value="1"/>#}
+        {#        <input type="hidden" id="checkid" value="all"/>#}
+        {#        <input type="hidden" id="cancelReson" value=""/>#}
+        {#        <textarea id="delAlert-tpl" class="hide">#}
+        {#	<div class="box-tips-area">#}
+        {#		<p>1：取消订单将作退款处理，一旦取消，不能恢复。&nbsp;&nbsp;</p>#}
+        {#		<p>2：取消日起5个工作日内退款完成，是否确定操作。</p>#}
+        {#	</div><!-- 20140722-退换货-延保tips-end -->#}
+        {#	<div class="box-button">#}
+        {#		<a class="box-ok" href="javascript:;"><span>确定</span></a>#}
+        {#	    <a class="box-cancel" href="javascript:;"><span>取消</span></a>#}
+        {#	</div>#}
+        {#</textarea>#}
+        {#        <input type="hidden" value="" id="addresseePhoneID"/>#}
+        {#        <!--20190523-查看自提码 start-->#}
+        {#        <textarea class="hide" id="validateTypeBox">#}
+        {#		<!-- 20190523-查看自提码--->#}
+        {#		<div class="box-tips-phone">#}
+        {#			<div class="hide">#}
+        {#				<p class="red f14">为了确保您的购物安全，请选择验证方式后获取验证码进行验证。</p>#}
+        {##}
+        {#				<label for=""><input class="span-400" type="text" name=""></label>#}
+        {#				<label for=""><input class="tips-phone-text span-232" type="text" name=""><a#}
+        {#                        class="box-evaluate box-button-style-2" href="javascript:;"><span>免费获取</span></a></label>#}
+        {#                <div class="tips tal"><span class="label-error red">提示信息</span></div>#}
+        {#            </div>#}
+        {#            <div class="">#}
+        {#                <p class="red f14">为了确保您的购物安全，请选择验证方式后获取验证码进行验证。</p>#}
+        {#                <div for="" id="validateType">#}
+        {#                </div>#}
+        {#                <label for=""><input class="tips-phone-text span-232" type="text" name="validateCode" id="validateCode"><a#}
+        {#                        class="box-evaluate box-button-style-2" href="javascript:;" id="sendValidateCode"#}
+        {#                        onclick=""><span id="validateMsg">获取验证码</span></a></label>#}
+        {#                <div class="tips tal" id="validate-errMsg"></div>#}
+        {##}
+        {#            </div>#}
+        {#		</div>#}
+        {#		<div class="box-button">#}
+        {#            <a class="box-cancel" href="javascript:;" id="cancelValidate"><span>取消</span></a>#}
+        {#            <a class="box-ok" href="javascript:;" id="confirmValidateCode"><span>确定</span></a>#}
+        {#		</div>#}
+        {#            <!-- 20190523-查看自提码-end -->#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea class="hide" id="selfPickCodeIDD">#}
+        {#	<div class="hr-25"></div>#}
+        {#	<div class="box-title-1" style="font-size: 24px;" id="selfPickCodeInfoIDD"></div>#}
+        {#	<div class="hr-15"></div>#}
+        {#	<div class="box-words">#}
+        {#	    <p>请妥善保管您的自提码，凭借此自提码以及您的订单编号在门店营业时间段内前往门店进行取货。</p>#}
+        {#	</div>#}
+        {#	<div class="hr-20"></div>#}
+        {#	<div class="box-button">#}
+        {#	    <a href="javascript:;" class="box-ok"><span>确定</span></a>#}
+        {#	</div>#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea id="msg-delorder-ok" class="hide">#}
+        {#	<div class="box-right-1"><span>温馨提示：订单删除成功</span></div>#}
+        {#	<div class="box-button">#}
+        {#		<a class="box-ok box-button-style-1" href="javascript:;"><span>确定</span></a>#}
+        {#	</div>#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea id="cancel-msg-tpl" class="hide">#}
+        {#	<table width="100%" cellspacing="0" cellpadding="0" border="0">#}
+        {#            <tbody>#}
+        {#            <tr>#}
+        {#                <td class="box-cl"></td>#}
+        {#                <td class="box-cc">#}
+        {#                    <div class="box-content" style="height: auto;">#}
+        {##}
+        {#                        <div class="box-content">#}
+        {#                        	<div class="box-tips-area black">#}
+        {#                            	<p>温馨提示：取消处理结果以订单详情记录为准。</p>#}
+        {#                        	</div>#}
+        {#                    	</div>#}
+        {##}
+        {#                        <div class="box-button">#}
+        {#                            <a href="javascript:;" class="box-ok"><span>确定</span></a>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                </td>#}
+        {#                <td class="box-cr"></td>#}
+        {#            </tr>#}
+        {#            </tbody>#}
+        {#        </table>#}
+        {#</textarea>#}
+        {##}
+        {#        <!-- 物流信息模板 -->#}
+        {#        <textarea id="interface-tpl" class="hide">#}
+        {#	<!--#macro interface data-->#}
+        {#		<table cellspacing="0" cellpadding="0" border="0">#}
+        {#			<thead>#}
+        {#				<tr>#}
+        {#					<th class="col-log-date">处理时间</th>#}
+        {#					<th class="col-log-info">处理信息</th>#}
+        {#				</tr>#}
+        {#			</thead>#}
+        {#			<tbody>#}
+        {#				<!--#list data as lst-->#}
+        {#					<tr>#}
+        {#						<td class="col-log-date">{#lst.logTime}</td>#}
+        {#						<td class="col-log-info">{#lst.logDescription}</td>#}
+        {#					</tr>#}
+        {#                <!--/#list-->#}
+        {#			</tbody>#}
+        {#		</table>#}
+        {#            <!--/#macro-->#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea id="exchange-timeout" class="hide">#}
+        {#	<div class="box-errors"><span>退换货过期</span></div>#}
+        {#    <div class="hr-15"></div>#}
+        {#    <div class="box-words">#}
+        {#        <p>对不起，您已经超过规定的退换货有效期，目前不能进行退换货操作！</p>#}
+        {#        <p>温馨提示：如果您是在网店更换过机器或者在商城换过机器，请您凭网店或者商品提供的检测单联系商城客服，在后台给你下换机申请单。</p>#}
+        {#    </div>#}
+        {#    <div class="hr-20"></div>#}
+        {#	<div class="box-button">#}
+        {#		<a class="box-ok" href="javascript:;"><span>确定</span></a>#}
+        {#	</div>#}
+        {#</textarea>#}
+        {##}
+        {##}
+        {#        <textarea id="exchange-error" class="hide">#}
+        {#	<div class="box-errors"><span>此订单商品已全部办理退换货，请不要重复申请哦~</span></div>#}
+        {#    <div class="hr-15"></div>#}
+        {#    <div class="hr-20"></div>#}
+        {#	<div class="box-button">#}
+        {#		<a class="box-ok" href="javascript:;"><span>确定</span></a>#}
+        {#	</div>#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea id="exchange-agreement" class="hide">#}
+        {#		<!-- 20140828-对话框-协议-退换货办理协议-start -->#}
+        {#		<div class="box-rule">#}
+        {#			<p><b>尊敬的用户：</b></p>#}
+        {#			<p style="text-indent:2em;">您可选择以下方式进行退换货</p>#}
+        {#			<p style="text-indent:2em;"><b>一、寄回商城仓库进行检测退换货</b></p>#}
+        {#			<ul>#}
+        {#				<li style="text-indent:2em;">您好，寄回商品检测前，请您仔细阅读以下条款。</li>#}
+        {#				<li style="text-indent:2em;">1、寄回检测需要您先自行垫付寄回运费，待检测符合退换条件后，商城会返还您的运费。</li>#}
+        {#				<li style="text-indent:2em;">2、请确保寄回商品无人为损坏，否则无法办理退换货。人为损坏包括但不限于：未经授权的维修、外力造成的碰撞破损、进液以及外观刮花划伤、掉漆等。</li>#}
+        {#				<li style="text-indent:2em;">3、退换货申请审核通过仅表示华为商城受理您的退换货申请，但不代表同意您的退换货，您可寄回商城进行检测，具体判断有赖于商品是否有质量问题的检测结果以及其他退换货条件的满足。</li>#}
+        {#				<li style="text-indent:2em;">4、寄回检测换货，请确保将商品主机、完整标配、完整原厂包装一次性寄回，如缺少标配配件等将无法更换。</li>#}
+        {#				<li style="text-indent:2em;">5、寄回检测退货，请确保将商品主机、完整标配、完整原厂包装、发票原件、赠品一次性寄回。</li>#}
+        {#				<li style="text-indent:2em;">6、寄回检测后，不符合退换货规定的商品将原路到付寄回，运费将由您承担。</li>#}
+        {#			</ul>#}
+        {#			<p style="text-indent:2em;"><b>二、当地售后服务网点检测，并换货</b></p>#}
+        {#			<ul>#}
+        {#				<li style="text-indent:2em;">您好，网点检测故障属实后，您可以选择直接在售后服务网点进行换机服务。</li>#}
+        {#				<li style="text-indent:2em;">1、前往售后服务网点前请您拨打网点电话咨询是否可受理。</li>#}
+        {#				<li style="text-indent:2em;">2、请您将发票、故障商品携带齐全前往售后服务网点进行检测换货。</li>#}
+        {#			</ul>#}
+        {#			<p style="text-indent:2em;"><b>三、当地售后服务网点开具检测报告，寄回商城退换货</b></p>#}
+        {#			<ul>#}
+        {#				<li style="text-indent:2em;">您好，您可直接到当地就近华为售后服务网点进行检测，开具检测报告后寄回华为商城仓库进行退换货。</li>#}
+        {#				<li style="text-indent:2em;">1、前往售后服务网点前请您拨打网点电话咨询是否可受理。</li>#}
+        {#				<li style="text-indent:2em;">2、请您将发票、故障商品携带齐全前往售后服务网点进行检测换货。</li>#}
+        {#			</ul>#}
+        {#		</div><!-- 20140828-对话框-协议-退换货办理协议-end -->#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea id="realNameComment" class="hide">#}
+        {#	<!-- 20170914-提示-start -->#}
+        {#	    <div class="box-phone01">#}
+        {#	        <div class="h">#}
+        {#	            <i></i>#}
+        {#	        </div>#}
+        {#	        <div class="b">#}
+        {#	        	<p class="title">绑定手机号码</p>#}
+        {#	            <p>根据国家相关规定，只有帐号经过实名验证的用户才可以跟帖评论或发布信息。为保障您的帐号正常使用，请尽快完成手机号绑定验证，感谢您的理解及支持！</p>#}
+        {#	        </div>#}
+        {#	    </div>#}
+        {#	    <div class="box-button">#}
+        {#	        <a href="javascript:;" class="box-cancel"><span>取消</span></a>#}
+        {#	        <a href="{% url 'app:user_info' %}"#}
+        {#               class="box-sure"><span>去绑定</span></a>#}
+        {#	    </div>#}
+        {#            <!-- 20170914-提示-end -->#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea id="box-confirm" class="hide">#}
+        {#<!-- 20140722-退换货-延保tips-start -->#}
+        {#	<div class="box-tips-area">#}
+        {#		<p>请您收到货后，再确认收货。</p>#}
+        {#	</div><!-- 20140722-退换货-延保tips-end -->#}
+        {#	<div class="box-button">#}
+        {#		<a class="box-ok" href="javascript:;"><span>确定</span></a>#}
+        {#	    <a class="box-cancel" href="javascript:;"><span>取消</span></a>#}
+        {#	</div>#}
+        {#</textarea>#}
+        {#        <textarea id="box-pj" class="hide">#}
+        {#<!-- 20140722-退换货-延保tips-start -->#}
+        {#<div class="box-tips-area">#}
+        {#	<p>此次购物是否让您满意？给个评价吧！</p>#}
+        {#</div>#}
+        {#<div class="box-custom-button">#}
+        {#	<a class="box-cancel box-button-style-2" href="/member/prdRemarkView.html" target="_blank"><span>去评价</span></a>#}
+        {#    <a class="box-cancel box-button-style-1" href="javascript:;"><span>关闭</span></a>#}
+        {#</div>#}
+        {#            <!-- 20140722-退换货-延保tips-end -->#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea id="order-cancel" class="hide">#}
+        {# <!-- 20171206-订单取消申请-start -->#}
+        {#	<div class="order-cancel">#}
+        {#		<div class="clearfix">#}
+        {#			<label><span class="red">*</span>取消原因</label>#}
+        {#			<div class="order-cancel-main">#}
+        {#				<div class="order-cancel-pulldown" id="selectReson">请选择取消原因</div>#}
+        {#                <!--选取原因后class="order-cancel-pulldown click"-->#}
+        {#				<div class="order-cancel-detail">#}
+        {#					<ul id="cancelOption" class="clearfix">#}
+        {#						<li><input type="radio" name="resonType" value="1">不想买了</li>#}
+        {#						<li><input type="radio" name="resonType" value="6">该商品Vmall商城降价了</li>#}
+        {#						<li><input type="radio" name="resonType" value="2">商品选择错误</li>#}
+        {#						<li><input type="radio" name="resonType" value="7">其他商家价格更低</li>#}
+        {#						<li><input type="radio" name="resonType" value="3">重复下单/误下单</li>#}
+        {#						<li><input type="radio" name="resonType" value="8">发货太慢</li>#}
+        {#						<li><input type="radio" name="resonType" value="4">忘记使用优惠券、积分等</li>#}
+        {#						<li><input type="radio" name="resonType" value="9">支付方式有误/无法支付</li>#}
+        {#						<li><input type="radio" name="resonType" value="5">收货信息/发票信息填写错误</li>#}
+        {#						<li><input type="radio" name="resonType" value="10">其他原因</li>#}
+        {#					</ul>#}
+        {#				</div>#}
+        {#			</div>#}
+        {#		</div>#}
+        {#		<div id="cancelErrorMessage" class="report-errors hide">请选择取消订单原因。</div>#}
+        {#	</div>#}
+        {#	<div class="order-cancel-tips">#}
+        {#		<span class="label-error">温馨提示：</span>#}
+        {#		<ul>#}
+        {#			<li>*&nbsp;&nbsp;订单成功取消后无法恢复</li>#}
+        {#			<li>*&nbsp;&nbsp;订单成功取消后，该订单已付金额将返还到您的支付账户中，取消日起5个工作日内退款完成</li>#}
+        {#		</ul>#}
+        {#	</div>#}
+        {##}
+        {#	<div class="box-button">#}
+        {#        <a href="javascript:;" id="cancelButton" class="box-cancel"><span>暂不取消</span></a>#}
+        {#        <a href="javascript:;" id="okButton" class="box-sure"><span>确定取消</span></a>#}
+        {#    </div>#}
+        {#            <!-- 20171206-订单取消申请-end -->#}
+        {#</textarea>#}
+        {##}
+        {#        <form id="clearPay" action="{% url 'app:user_order' %}">#}
+        {#            <input name="ips" id="clear-Ips" type="hidden">#}
+        {#        </form>#}
+        {#        <textarea id="unPay-inOnce" class="hide">#}
+        {#</textarea>#}
+
+        <script src="/static/js/user_js/orderList.min.js"></script>
+        <script src="/static/js/user_js/add.min.js"></script>
+        <script>
+            $("#status li").click(function () {
+
+                $(this).addClass('current').siblings().removeClass('current');
+                $("#ordercont > div").eq($("#status li").index($(this))).removeClass('noshow');
+                $("#ordercont > div").eq($("#status li").index($(this))).addClass('show').siblings().removeClass('show');
+                $("#ordercont > div").eq($("#status li").index($(this))).siblings().addClass('noshow');
+
+            })
+        </script>
+        <script>
+            ec.load("ec.pager");
+            $(function () {
+                $('.list-group-item .o-pro table').each(function () {
+                    var trs = $(this).find('tr');
+                    $(trs[0]).find('.col-pay').attr('rowspan', trs.length);
+                    $(trs[0]).find('.col-operate').attr('rowspan', trs.length);
+                });
+            });
+            ec.member.orderList.updateDeliveryOrder = "1";
+            ec.member.orderList.payCheckCount = "0";
+            accountCenterUrl = "https://hwid1.vmall.com/oauth2/userCenter/hwAccount?reqClientType=26&loginChannel=26000000&themeName=cloudTheme&lang=zh-cn";
+        </script>
+    </div>
+{% endblock %}

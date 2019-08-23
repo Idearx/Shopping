@@ -1,0 +1,176 @@
+{% extends 'admin/index.html' %}
+
+{% block head %}
+    {{ block.super }}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block right %}
+
+    <div class="right-menu">
+        <div class="main-hd">
+            <div class="page-teb">
+                <div class="l-tab-links">
+                    <ul style="left:0;">
+                        <li class="l-select">
+                            <a href="#">首页</a>
+                        </li>
+                        <li class="l-select">
+                            <a href="#">评论管理</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="l-tab-content" style="background:#fff;">
+                    <div class="tab-content-item">
+                        <div class="home">
+                            <!--员工管理   开始-->
+                            <div class="yg-gl">
+
+                                <form method="post" action="{% url 'admin:comments' %}">
+                                    {% csrf_token %}
+                                    <div class="yg-add">
+                                        <input class="ui-xz1" type="submit" value="删除" name="">
+                                        <input class="ui-xz2" type="submit" value="提交" name="submit">
+
+                                    </div>
+
+                                    <div class="yg-tab">
+                                        <div class="grid">
+                                            <div class="layoutitem" style="width:100%;border:none;">
+
+                                                <table class="gridbar" border="0" cellpadding="0" cellspacing="0">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>select</th>
+                                                        <th scope="col">评论ID</th>
+                                                        <th>发表人</th>
+                                                        <th>评论内容</th>
+                                                        <th>商品ID</th>
+                                                        <th>商品名</th>
+                                                        <th>点赞数</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="ttt">
+                                                    {% for comment in pager.object_list %}
+                                                        <tr>
+                                                            <td><input type="checkbox" name="{{ comment.comid }}" value="0"
+                                                                       class="ischoose"></td>
+                                                            <td><input type="text" value="{{ comment.comid }}"
+                                                                       name="id{{ comment.comid }}"></td>
+                                                            <td><input type="text" value="{{ comment.uid }}"
+                                                                       name="uid{{ comment.comid }}"></td>
+                                                            <td><input type="text" value="{{ comment.content }}"
+                                                                       name="content{{ comment.comid }}"></td>
+                                                            <td><input type="text" value="{{ comment.gid }}"
+                                                                       name="gid{{ comment.comid }}"></td>
+                                                            <td><input type="text" value="{{ comment.goodname }}"
+                                                                       name="gname{{ comment.comid }}"></td>
+                                                            <td><input type="text" value="{{ comment.greatnum }}"
+                                                                       name="grate{{ comment.comid }}"></td>
+
+                                                        </tr>
+                                                    {% endfor %}
+
+                                                    <tr id="addone">
+                                                        <td><input type="checkbox" name="0" value="0" class="ischoose">
+                                                        </td>
+                                                        <td><input type="text" value="" name="id0"></td>
+                                                        <td><input type="text" value="" name="uid0"></td>
+                                                        <td><input type="text" value="" name="content0"></td>
+                                                        <td><input type="text" value="" name="gid0"></td>
+                                                        <td><input type="text" value="" name="gname0"></td>
+                                                        <td><input type="text" value="" name="grate0"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                            <div class="pagin">
+                                                <nav aria-label="Page navigation">
+                                                    <ul class="pagination">
+                                                        <li  {% if not pager.has_previous %} class="disabled" {% else %}
+                                                                                             class="" {% endif %}>
+                                                            {% if pager.has_previous %}
+                                                                <a href="{% url 'admin:comments1' pager.previous_page_number %}"
+                                                                   aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                </a>
+                                                            {% else %}
+                                                                <a href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                </a>
+                                                            {% endif %}
+                                                        </li>
+                                                        {% for page in pager.page_range %}
+                                                            <li {% ifequal pager.number page %}
+                                                                class="active"{% endifequal %}><a
+                                                                    href="{% url 'admin:comments1' page %}">{{ page }}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                        <li {% if not pager.has_next %} class="disabled" {% else %}
+                                                                                        class="" {% endif %}>
+                                                            {% if pager.has_next %}
+                                                                <a href="{% url 'admin:comments1' pager.next_page_number %}"
+                                                                   aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                </a>
+                                                            {% else %}
+                                                                <a href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                </a>
+                                                            {% endif %}
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <!--员工管理   结束-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(".ischoose").click(function () {
+
+            console.log($(this).index());
+            console.log($(this).val());
+            var a = $(this).val();
+            if (a == 1) {
+                console.log(100)
+                $(this).val(0)
+            }
+            if (a == 0) {
+                console.log(111)
+                $(this).val('1')
+            }
+        })
+    </script>
+
+    <script>
+        $(".yg-add input").click(function () {
+            $(this).attr('name', 'submit')
+            $(this).siblings().removeAttr('name')
+        })
+    </script>
+{#    <script>#}
+{#        $("#kehu").load(function () {#}
+{#            $(this).removeClass("menu-list-01");#}
+{#            $(this).addClass("menu-list-02").siblings().removeClass("menu-list-02");#}
+{#            $(this).siblings().addClass("menu-list-01")#}
+{#        })#}
+{#    </script>#}
+
+{% endblock %}

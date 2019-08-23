@@ -1,0 +1,124 @@
+{% extends 'common/user0.html' %}
+
+{% block right %}
+    <div class="fr u-4-5"><!-- 20141212-栏目-start -->
+        <div class="section-header">
+            <div class="fl">
+                <h2><span>到货通知</span></h2>
+            </div>
+        </div>
+        <!-- 20141212-栏目-end -->
+        <div class="hr-20"></div>
+        <!-- 20141225-到货通知-列表-start -->
+        <div class="myConcern-record">
+            <div class="list-group-title" id="list-group-title">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <thead>
+                    <tr>
+                        <th class="col-pro">商品名称</th>
+                        <th class="col-price">价格</th>
+                        <th class="col-state">状态</th>
+                        <th class="col-operate">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="list-group" id="list-group">
+                {% if count > 0 %}
+                    {% for i in goods %}
+                        <div class="list-group-item">
+                            <div class="o-info">
+                                <div class="col-info">
+                                    {% for a,b in ords_time.item %}
+                                        {% if a == i %}
+                                            <span class="o-date">{{ b }}</span>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% for m,n in ords_num.item %}
+                                        {% if m == i %}
+                                            <span class="o-no">&nbsp;&nbsp;  订单号：<a
+                                                    onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                                    href="javascript:;" title="11570268226">{{ n }}</a></span>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                    <tr style="align-content: center">
+                                        <td class="col-pro-img" style="width: 200px;align-content: center"><p
+                                                class="p-img">
+                                            <a
+                                                    title="{{ i.goodname }}"
+                                                    href="/product/10086102942203.html#10086106925758"
+                                                    target="_blank"
+                                                    onclick="pushProMsg(10086106925758,'300130101')"><img
+                                                    class="nocomment-2601010102602"
+                                                    alt=""
+                                                    src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                        </p></td>
+                                        <td class="col-pro-info" style="width: 379px;align-content: center"><p
+                                                class="p-name"><a
+                                                title=""
+                                                target="_blank" class="nocomment-2601010102602"
+                                                href="/product/10086102942203.html#10086106925758"
+                                                onclick="pushProMsg(10086106925758,'300130101')">{{ i.goodname }}</a>
+                                        </p>
+                                        </td>
+                                        <td class="col-quty" style="width: 117px;align-content: center"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¥</em><span>{{ i.price }}</span>
+                                        </td>
+                                        <td class="col-price" style="width: 117px;align-content: center">
+                                            <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;待收货</em></td>
+                                        <td class="col-price" style="width: 181px;align-content: center">
+                                            <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</em></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="list-group-empty">您暂时没有相关记录。</div>
+                {% endif %}
+            </div>
+            <div class="list-group-page">
+                <div class="pager" id="list-pager"></div>
+            </div>
+        </div>
+        <form id="nowbuy-list" autocomplete="off" method="post" action="/order/confirm" class="hide">
+            <input id="skuIds" name="skuIds" type="hidden">
+            <input name="state" type="hidden" value="0">
+            <input name="CsrfToken" type="hidden" value="906F9CE6C5F3B11826D855686022BA61D023159AE193D1D2"></form>
+        <div class="popup-area popup-define-area hide">
+            <div class="b">
+                <p>您确认要删除该地址吗？</p>
+                <div class="popup-button-area"><a href="javascript:;" class="button-action-no"><span>否</span></a><a
+                        href="javascript:;" class="button-action-yes"><span>是</span></a></div>
+            </div>
+            <div class="f"><s class="icon-arrow-down"></s></div>
+        </div>
+        <div class="hr-60"></div>
+
+        <script src="/static/js/user_js/concern.min.js"></script>
+        <script>
+            ec.load("ec.pager");
+            ec.mediaPath = "https://res.vmallres.com/pimages/";
+        </script>
+        <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/pager-min.js" charset="gbk"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader7');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader7 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("ec.pager/pager-min.js", "complete");
+        })();</script>
+    </div>
+{% endblock %}

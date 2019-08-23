@@ -1,0 +1,280 @@
+{% extends 'common/user0.html' %}
+
+{% block right %}
+    <div class="fr u-4-5">
+        <div class="">
+            <div class="fr u-4-5">
+                <!-- 20141212-栏目-start -->
+                <div class="section-header section-header-new">
+                    <div class="fl">
+                        <h2><span>我的退换货</span></h2>
+                    </div>
+                </div>
+                <!-- 20141212-栏目-end -->
+
+
+                <div class="myorder-hd clearfix">
+                    <div class="tab fl">
+                        <ul class="clearfix">
+                            <li><a href="javascript:;"><span>申请退换货</span></a></li>
+                            <li class="current"><a href="javascript:;"><span>退换货记录</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    {#                    <div class="link fr">#}
+                    {#                        <a target="_blank" href="https://www.vmall.com/help/faq-5259.html">退换货流程</a>#}
+                    {#                        <a target="_blank" href="https://www.vmall.com/help/faq-834.html">退换货政策</a>#}
+                    {#                    </div>#}
+                </div>
+
+
+                <!-- 20180723-申请退换货-列表-start -->
+                <div class="exchange-apply hide">
+                    <div class="prevention-fraud-new">
+                        <p class="prevention-fraud-tips">
+                            注意：华为商城不会以订单异常、系统升级为由，要求您点击任何链接进行退款！ 请谨防<span>钓鱼链接和诈骗电话</span>！
+                        </p>
+                    </div>
+                    <div class="myorder-list">
+                        <div class="myorder-list-main">
+
+                            <div class="myorder-list-status">
+                                <ul class="clearfix">
+                                    <li>订单商品信息<span class="gray">（为您展示半年内已签收的订单）</span></li>
+                                    <li>数量</li>
+                                    <li>实付总额</li>
+                                    <li>操作</li>
+                                </ul>
+                            </div>
+
+                            <div class="myorder-list-item list-group" id="typeOneID">
+
+                                {% if to_be_return > 0 %}
+                                    {% for order in all_orders %}
+                                    <div class="list-group-item">
+                                        <div class="o-info">
+                                            <div class="col-info"><span
+                                                    class="o-date">{{ order.ordtime }}</span><span
+                                                    class="o-no">&nbsp;&nbsp;  订单号：<a
+                                                    onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                                    href="javascript:;" title="11570268226">{{ order.ordernum }}</a></span></div>
+                                        </div>
+                                        {% for good in all_goods %}
+                                            {% if good.gid == order.gid %}
+                                        <div class="">
+                                            <table border="0" cellpadding="0" cellspacing="0">
+                                                <tbody>
+                                                <tr style="align-content: center">
+                                                    <td class="col-pro-img" style="width: 150px;"><p class="p-img"><a
+                                                            title="{{ good.goodsname }}"
+                                                            href="/product/10086102942203.html#10086106925758"
+                                                            target="_blank"
+                                                            onclick="pushProMsg(10086106925758,'300130101')"><img
+                                                            class="nocomment-2601010102602"
+                                                            alt=""
+                                                            src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                                    </p></td>
+                                                    <td class="col-pro-info" style="width: 350px"><p class="p-name"><a
+                                                            title=""
+                                                            target="_blank" class="nocomment-2601010102602"
+                                                            href="/product/10086102942203.html#10086106925758"
+                                                            onclick="pushProMsg(10086106925758,'300130101')">{{ good.goodname }}</a></p>
+                                                    </td>
+                                                    <td class="col-quty" style="width: 60px">{{ order.buynum }}</td>
+                                                    <td class="col-price" style="width: 180px;">
+                                                        <em>¥</em><span>{{ order.totalprice }}</span></td>
+
+
+                                                    <td rowspan="4" class="col-operate"><p class="p-link"><a
+                                                            href="javascript:;"
+                                                            onclick="ec.member.orderList.del(this,'11570268226');">删除订单</a>
+                                                    </p>
+                                                        <p class="p-link"><a
+                                                                onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                                                href="javascript:;">订单详情</a></p></td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="list-group-empty">您暂时没有相关记录。</div>
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+
+                        <div class="list-group-page">
+                            <div class="pager" id="list-pager-typeOneID"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 20180723-申请退换货-列表-end -->
+
+
+                <!-- 20180723-退换货记录-列表-start -->
+                <div class="exchange-list">
+
+                    <div class="prevention-fraud-new">
+                        <p class="prevention-fraud-tips">
+                            注意：华为商城不会以订单异常、系统升级为由，要求您点击任何链接进行退款！ 请谨防<span>钓鱼链接和诈骗电话</span>！
+                        </p>
+                    </div>
+
+                    <div class="myorder-list">
+                        <div class="myorder-list-main">
+                            <div class="myorder-list-status myorder-list-record" id="list-group-title">
+                                <ul class="clearfix">
+                                    <li class="myorder-list-record">
+                                        <div class="myorder-time">
+                                            <span id="sixMonthID"
+                                                  onmouseover="ec.member.exchange.showList(this)">最近六个月</span>
+                                            <dl onmouseleave="ec.member.exchange.hideList(this)" style="display: none;">
+                                                <dd><a href="javascript:;"
+                                                       onclick="ec.member.exchange.cateLive(this,1);">最近六个月</a></dd>
+                                                <dd><a href="javascript:;"
+                                                       onclick="ec.member.exchange.cateLive(this,0);">六个月以前</a></dd>
+                                            </dl>
+                                        </div>
+                                        <span>退换货订单信息</span>
+                                    </li>
+                                    <li>状态</li>
+                                    <li>操作</li>
+                                </ul>
+                            </div>
+
+                            <div class="myorder-list-item" id="typeTwoID">
+                                <div class="list-group-empty">您暂时没有相关记录。</div>
+                            </div>
+                        </div>
+
+                        <div class="list-group-page">
+                            <div class="pager" id="list-pager-typeTwoID"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- 20180723-退换货记录-列表-end -->
+            </div>
+        </div>
+
+        {#        <textarea id="exchange-timeout" class="hide">	&lt;div class="box-errors"&gt;&lt;span&gt;退换货过期&lt;/span&gt;&lt;/div&gt;#}
+        {#    &lt;div class="hr-15"&gt;&lt;/div&gt;#}
+        {#    &lt;div class="box-words"&gt;#}
+        {#        &lt;p&gt;对不起，您已经超过规定的退换货有效期，目前不能进行退换货操作！&lt;/p&gt;#}
+        {#        &lt;p&gt;温馨提示：如果您是在网店更换过机器或者在商城换过机器，请您凭网店或者商品提供的检测单联系商城客服，在后台给你下换机申请单。&lt;/p&gt;#}
+        {#    &lt;/div&gt;#}
+        {#    &lt;div class="hr-20"&gt;&lt;/div&gt;#}
+        {#	&lt;div class="box-button"&gt;#}
+        {#		&lt;a class="box-ok" href="javascript:;"&gt;&lt;span&gt;确定&lt;/span&gt;&lt;/a&gt;#}
+        {#	&lt;/div&gt;#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea id="exchange-error" class="hide">	&lt;div class="box-errors"&gt;&lt;span&gt;此订单商品已全部办理退换货，请不要重复申请哦~&lt;/span&gt;&lt;/div&gt;#}
+        {#    &lt;div class="hr-15"&gt;&lt;/div&gt;#}
+        {#    &lt;div class="hr-20"&gt;&lt;/div&gt;#}
+        {#	&lt;div class="box-button"&gt;#}
+        {#		&lt;a class="box-ok" href="javascript:;"&gt;&lt;span&gt;确定&lt;/span&gt;&lt;/a&gt;#}
+        {#	&lt;/div&gt;#}
+        {#</textarea>#}
+        {##}
+        {#        <textarea id="exchange-cancel" class="hide">	&lt;div class="box-errors-1"&gt;&lt;span&gt;您确认要取消该记录吗？&lt;/span&gt;&lt;/div&gt;#}
+        {#	&lt;div class="box-button"&gt;#}
+        {#	&lt;a href="javascript:;" class="box-cancel"&gt;&lt;span&gt;取消&lt;/span&gt;&lt;/a&gt;#}
+        {#	&lt;a href="javascript:;" class="box-ok"&gt;&lt;span&gt;确认&lt;/span&gt;&lt;/a&gt;#}
+        {#	&lt;/div&gt;#}
+        {#</textarea>#}
+        {##}
+        {##}
+        {#        <textarea id="exchange-agreement" class="hide">		&lt;!-- 20140828-对话框-协议-退换货办理协议-start --&gt;#}
+        {#		&lt;div class="box-rule"&gt;#}
+        {#			&lt;p&gt;&lt;b&gt;尊敬的用户：&lt;/b&gt;&lt;/p&gt;#}
+        {#			&lt;p style="text-indent:2em;"&gt;您可选择以下方式进行退换货&lt;/p&gt;#}
+        {#			&lt;p style="text-indent:2em;"&gt;&lt;b&gt;一、寄回商城仓库进行检测退换货&lt;/b&gt;&lt;/p&gt;#}
+        {#			&lt;ul&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;您好，寄回商品检测前，请您仔细阅读以下条款。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;1、寄回检测需要您先自行垫付寄回运费，待检测符合退换条件后，商城会返还您的运费。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;2、请确保寄回商品无人为损坏，否则无法办理退换货。人为损坏包括但不限于：未经授权的维修、外力造成的碰撞破损、进液以及外观刮花划伤、掉漆等。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;3、退换货申请审核通过仅表示华为商城受理您的退换货申请，但不代表同意您的退换货，您可寄回商城进行检测，具体判断有赖于商品是否有质量问题的检测结果以及其他退换货条件的满足。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;4、寄回检测换货，请确保将商品主机、完整标配、完整原厂包装一次性寄回，如缺少标配配件等将无法更换。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;5、寄回检测退货，请确保将商品主机、完整标配、完整原厂包装、发票原件、赠品一次性寄回。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;6、寄回检测后，不符合退换货规定的商品将原路到付寄回，运费将由您承担。&lt;/li&gt;#}
+        {#			&lt;/ul&gt;#}
+        {#			&lt;p style="text-indent:2em;"&gt;&lt;b&gt;二、当地售后服务网点检测，并换货&lt;/b&gt;&lt;/p&gt;#}
+        {#			&lt;ul&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;您好，网点检测故障属实后，您可以选择直接在售后服务网点进行换机服务。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;1、前往售后服务网点前请您拨打网点电话咨询是否可受理。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;2、请您将发票、故障商品携带齐全前往售后服务网点进行检测换货。&lt;/li&gt;#}
+        {#			&lt;/ul&gt;#}
+        {#			&lt;p style="text-indent:2em;"&gt;&lt;b&gt;三、当地售后服务网点开具检测报告，寄回商城退换货&lt;/b&gt;&lt;/p&gt;#}
+        {#			&lt;ul&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;您好，您可直接到当地就近华为售后服务网点进行检测，开具检测报告后寄回华为商城仓库进行退换货。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;1、前往售后服务网点前请您拨打网点电话咨询是否可受理。&lt;/li&gt;#}
+        {#				&lt;li style="text-indent:2em;"&gt;2、请您将发票、故障商品携带齐全前往售后服务网点进行检测换货。&lt;/li&gt;#}
+        {#			&lt;/ul&gt;#}
+        {#		&lt;/div&gt;&lt;!-- 20140828-对话框-协议-退换货办理协议-end --&gt;#}
+        {#</textarea>#}
+
+        <input type="hidden" id="colid" value="1">
+        <input type="hidden" id="checkid" value="recordTemp">
+        <div class="popup-area popup-define-area hide">
+            <div class="b">
+                <p>您确认要取消退货吗？</p>
+                <div class="popup-button-area"><a href="javascript:;" class="button-action-yes" title="是"><span>是</span></a><a
+                        href="javascript:;" class="button-action-no" title="否"><span>否</span></a></div>
+            </div>
+            <div class="f"><s class="icon-arrow-down"></s></div>
+        </div>
+        <div class="hr-80"></div>
+        <script>
+            $(".myorder-hd li").click(function () {
+                $(this).addClass("current").siblings().removeClass("current");
+                if ($(this).index() === 0) {
+                    $(".exchange-apply").removeClass("hide").next().addClass("hide")
+                }
+                if ($(this).index() === 1) {
+                    $(".exchange-list").removeClass("hide").prev().addClass("hide")
+                }
+            })
+            ec.load("ec.pager");
+        </script>
+        <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/pager-min.js" charset="gbk"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader7');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader7 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("ec.pager/pager-min.js", "complete");
+        })();</script>
+        <script src="/static/js/user_js/exchangeList.min.js"></script>
+        <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/movebar.min.js"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader8');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader8 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("jquery.movebar/movebar.min.js", "complete");
+        })();</script>
+    </div>
+{% endblock %}

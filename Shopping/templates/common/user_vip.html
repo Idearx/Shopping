@@ -1,0 +1,97 @@
+{% extends 'common/user0.html' %}
+
+{% block right %}
+    <div class="fr u-4-5">        <!-- 20141212-栏目-start -->
+        <div class="section-header">
+            <div class="fl">
+                <h2><span>等级与特权</span></h2>
+            </div>
+        </div><!-- 20141212-栏目-end -->
+        <div class="hr-20"></div>
+
+        <!-- 20141228-我的等级-状态-start -->
+        <div class="myVip-state">
+
+            <div class="state-level">
+                <span class="level-0" style="color: red">V{{ user.vipgrade }}</span>
+            </div>
+            <div class="state-exp">
+                <div class="exp-total">
+                    我的当前等级：<span>V{{ user.vipgrade }}</span><b>|</b>我的当前经验值：<span>{{ user.points }}</span>
+                </div>
+
+            </div>
+        </div>
+        <!-- 20150915-我的等级-状态-end -->
+
+        <div class="hr-35"></div>
+        <!--
+        width = 鼠标定位的li宽度
+        left = 鼠标定位的li的前面兄弟节点宽度和
+        -->
+        <div id="ec-tab-grade" class="my-tab">
+            <div id="ec-tab-grade" class="ec-tab">
+                <ul>
+
+                    <li class="current"><a href="javascript:;" ><span>特权介绍</span></a></li>
+
+                </ul>
+                <div id="listBorder" class="ec-tab-arrow" style="width: 94px; left: 0px;"></div>
+            </div>
+        </div>
+
+        <!--<div id="myTag" class="myTag">-->
+
+
+        <!-- 20150915-特权介绍-start -->
+        <div id="tab-common-index-2">
+            <div class="myPle-desc">
+                <p><img src="https://res.vmallres.com/pimages///template/content/2019/MIdzx0EUc0tQYLNecBtC.jpg"
+                        style="float:none;" title="fg.jpg"></p>
+            </div>
+        </div>
+        <!-- 20150915-特权介绍-end -->
+
+
+
+
+
+
+        <script src="/static/js/user_js/myIntegral.js"></script>
+        <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/movebar.min.js"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader7');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader7 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("jquery.movebar/movebar.min.js", "complete");
+        })();</script>
+        <script>
+            ec.load("ec.pager");
+
+
+        </script>
+        <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/pager-min.js" charset="gbk"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader8');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader8 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("ec.pager/pager-min.js", "complete");
+        })();</script>
+    </div>
+{% endblock %}

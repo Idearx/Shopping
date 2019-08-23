@@ -193,294 +193,85 @@
 
 <div class="shortcut">
     <div class="layout">
-        <div class="s-sub">
-            <ul>
-                <li><a href="https://www.vmall.com/"
-                       onclick="pushHeaderMsg(&#39;首页&#39;,&#39;https://www.vmall.com&#39;)">首页</a></li>
-                <li><a href="http://consumer.huawei.com/cn/" target="_blank"
-                       onclick="pushHeaderMsg(&#39;华为官网&#39;,&#39;http://consumer.huawei.com/cn/&#39;)">华为官网</a></li>
-                <li><a href="http://www.honor.cn/" target="_blank"
-                       onclick="pushHeaderMsg(&#39;荣耀官网&#39;,&#39;http://www.honor.cn/&#39;)">荣耀官网</a></li>
-                <li><a href="http://club.huawei.com/" target="_blank"
-                       onclick="pushHeaderMsg(&#39;花粉俱乐部&#39;,&#39;http://club.huawei.com&#39;)">花粉俱乐部</a></li>
-                <li><a href="javascript:;" rel="nofollow"
-                       onclick="pushHeaderMsgPriority(&#39;V码(优购码)&#39;,&#39;https://www.vmall.com/priority&#39;)">V码(优购码)</a>
-                </li>
-                <li><a href="https://www.vmall.com/company" target="_blank"
-                       onclick="pushHeaderMsg(&#39;企业购&#39;,&#39;/company&#39;)">企业购</a></li>
-                <li class="s-hwep hide" id="li-enterprise-preferential"></li>
-                <li><a href="javascript:;"
-                       onclick="showSelectRegion();pushHeaderMsg(&#39;Select Region&#39;,&#39;&#39;)">Select Region</a>
-                </li>
-                <li>
-                    <div class="s-dropdown">
-                        <div class="h">
-                            <a class="icon-dropdown">更多精彩</a>
-                        </div>
-                        <div class="b">
-                            <div class="dropdown-more w-119">
-                                <dl>
-                                    <dt><a href="http://emui.huawei.com/cn/" target="_blank">EMUI</a></dt>
-                                    <dt><a href="http://appstore.huawei.com/" target="_blank">应用市场</a></dt>
-                                    <dt><a href="http://cloud.huawei.com/" target="_blank">华为终端云空间</a></dt>
-                                    <dt><a href="http://developer.huawei.com/" target="_blank">开发者联盟</a></dt>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+
 
         <div class="s-main s-main-no-minicart">
             <img src="/static/images/dingdan_images/bg71.png" class="hide">
             <ul>
                 <li id="unlogin_status" style="display: none;">
-                    <div id="top_unlogin" class="header-toolbar hide">
-                        <!-- 2017-02-15-头部-工具栏-焦点为header-toolbar-item增加ClassName:hover -->
-                        <div class="header-toolbar-item">
-                            <div class="i-login">
-                                <div class="h">
-                                    <div class="">
-                                        <!-- <script>document.write('<a id="top-index-loginUrl" href="https://hwid1.vmall.com/CAS/remoteLogin?loginChannel=26000000&reqClientType=26&lang=zh-cn&loginUrl=https%3A%2F%2Fhwid1.vmall.com%2FCAS%2Fportal%2Flogin.html&service=https%3A%2F%2Fwww.vmall.com%2Faccount%2Facaslogin%3Furl%3D'+encodeURIComponent(encodeURIComponent(window.location.href))+'" rel="nofollow" onclick="pushLoginMsg(\'登录\',\'\')">请登录</a>');</script> -->
-                                        <script>document.write('<a id="top-index-loginUrl" href="javascript:;" rel="nofollow" onclick="pushLoginMsgInfoPerson(\'登录\',\'\')">请登录</a>');</script>
-                                        <a id="top-index-loginUrl" href="javascript:;" rel="nofollow"
-                                           onclick="pushLoginMsgInfoPerson(&#39;登录&#39;,&#39;&#39;)">请登录</a>
-                                        <a href="https://hwid1.vmall.com/CAS/portal/userRegister/regbyphone.html?service=https://www.vmall.com/account/caslogin&amp;loginChannel=26000000&amp;reqClientType=26&amp;lang=zh-cn"
-                                           rel="nofollow"
-                                           onclick="pushLoginMsg(&#39;注册&#39;,&#39;&#39;)">&nbsp;&nbsp;注册</a>
+                    <div class="s-dropdown">
+                        <div class="h"><a href="https://www.vmall.com/member" rel="nofollow" target="_blank"
+                                          class="icon-dropdown"><span>{{ request.session.username }}</span></a>&nbsp;
+                        </div>
+                        <div class="b">
+                            <div class="dropdown-i-mall">
+                                <div class="i-mall-prompt clearfix">
+                                    <div class="user-head fl"><p class="user-img"><a
+                                            href="https://www.vmall.com/member" rel="nofollow"
+                                            timetype="timestamp" target="_blank"><img
+                                            src=""
+                                            alt="用户头像" id="customerPic"></a></p></div>
+                                    <div class="user-info fl">
+                                        <div id="user-vip-level-tips-index"
+                                             class="user-level icon-vip-level-0"><em></em>
+                                            <p><span id="canvas-index" style="width: 0%;"></span></p></div>
+                                        <div id="vip-info" class="user-info-detail clearfix"><a
+                                                id="authentication_n"
+                                                href="https://www.vmall.com/authmember/accesstoken"
+                                                rel="nofollow" class="icon-realname disabled">未实名</a> <a
+                                                href="https://www.vmall.com/member/msg" rel="nofollow"
+                                                timetype="timestamp" class="icon-mail">消息(<span
+                                                id="top-newMsgCount">0</span>)</a></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li id="login_status" class="hide" style="display: list-item;">
-                    <div id="top_login" class="header-toolbar">
-                        <div class="s-dropdown">
-                            <div class="h h-wide" id="up_loginName-hover">
-                                <a class="icon-dropdown" href="https://www.vmall.com/member?t=1565423478105"
-                                   rel="nofollow" target="_blank"
-                                   onclick="pushLoginMsg(&#39;已登录&#39;,&#39;用户名&#39;)"><span
-                                        id="up_loginName">释***变</span></a>&nbsp;
-                            </div>
-                            <div class="b">
-                                <!-- 2017-06-19-个人信息-start -->
-                                <div class="dropdown-i-mall">
-                                    <div class="i-mall-prompt clearfix">
-                                        <div class="user-head fl">
-                                            <p class="user-img">
-                                                <a href="https://www.vmall.com/member?t=15654234781051565423470663"
-                                                   rel="nofollow" timetype="timestamp" target="_blank"
-                                                   onclick="pushLoginMsg(&#39;已登录&#39;,&#39;头像&#39;)">
-                                                    <img id="customerPic" src="/static/images/dingdan_images/img_not_logged_in.png"
-                                                         alt="默认头像" imgpath="https://res.vmallres.com/20190630/images">
-                                                </a>
-                                            </p>
-                                        </div>
-                                        <div class="user-info fl">
-                                            <div id="user-vip-level-tips-index" class="user-level icon-vip-level-0">
-                                                <em></em>
-                                                <p><span id="canvas-index" style="width: 0%"></span></p>
-                                            </div>
-                                            <div class="user-info-detail clearfix" id="vip-info">
-                                                <a id="authentication_y" class="icon-realname hide"
-                                                   style="display: none;">已实名</a>
-                                                <a id="authentication_n"
-                                                   href="https://www.vmall.com/authmember/accesstoken" rel="nofollow"
-                                                   class="icon-realname disabled hide"
-                                                   onclick="pushLoginMsg(&#39;已登录&#39;,&#39;未实名&#39;)"
-                                                   style="display: inline;">未实名</a>
-                                                <a class="icon-mail"
-                                                   href="https://www.vmall.com/member/msg?t=15654234781051565423470663"
-                                                   rel="nofollow" timetype="timestamp"
-                                                   onclick="pushLoginMsg(&#39;已登录&#39;,&#39;消息中心&#39;)">消息(<span
-                                                        id="top-newMsgCount">0</span>)</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="i-mall-uc">
+                                <div class="i-mall-uc">
+                                    <dl class="clearfix">
+                                        <dt><span class="fl">我的订单</span><a
+                                                href="https://www.vmall.com/member/order"
+                                                timetype="timestamp" class="fr">更多</a></dt>
+                                    </dl>
+                                    <div class="i-mall-uc-con">
                                         <dl class="clearfix">
-                                            <dt><span class="fl">我的订单</span><a class="fr"
-                                                                               href="https://www.vmall.com/member/order?t=15654234781051565423470663"
-                                                                               timetype="timestamp"
-                                                                               onclick="pushLoginMsg(&#39;已登录&#39;,&#39;更多&#39;)">更多</a>
-                                            </dt>
+                                            <dd><a href="https://www.vmall.com/member/order?tab=unpaid"
+                                                   timetype="timestamp">待支付</a></dd>
+                                            <dd><a href="https://www.vmall.com/member/order?tab=send"
+                                                   timetype="timestamp">待收货</a></dd>
+                                            <dd><a href="https://www.vmall.com/member/order?tab=nocomment"
+                                                   timetype="timestamp">待评价</a></dd>
+                                            <dd><a href="https://www.vmall.com/member/exchange?"
+                                                   timetype="timestamp">退换货</a></dd>
+                                            <dd>
+                                                <a href="https://www.vmall.com/member/recycle/index/aihuishou"
+                                                   timetype="timestamp">旧机回收</a></dd>
                                         </dl>
-                                        <div class="i-mall-uc-con">
-                                            <dl class="clearfix">
-                                                <dd>
-                                                    <a href="https://www.vmall.com/member/order?t=15654234781051565423470663&amp;tab=unpaid"
-                                                       timetype="timestamp"
-                                                       onclick="pushLoginMsg(&#39;已登录&#39;,&#39;待支付&#39;)">待支付</a></dd>
-                                                <dd>
-                                                    <a href="https://www.vmall.com/member/order?t=15654234781051565423470663&amp;tab=send"
-                                                       timetype="timestamp"
-                                                       onclick="pushLoginMsg(&#39;已登录&#39;,&#39;待收货&#39;)">待收货</a></dd>
-                                                <dd>
-                                                    <a href="https://www.vmall.com/member/order?t=15654234781051565423470663&amp;tab=nocomment"
-                                                       timetype="timestamp"
-                                                       onclick="pushLoginMsg(&#39;已登录&#39;,&#39;待评价&#39;)">待评价</a></dd>
-                                                <dd>
-                                                    <a href="https://www.vmall.com/member/exchange?t=15654234781051565423470663"
-                                                       timetype="timestamp"
-                                                       onclick="pushLoginMsg(&#39;已登录&#39;,&#39;退换货&#39;)">退换货</a></dd>
-                                                <dd>
-                                                    <a href="https://www.vmall.com/member/recycle/index/aihuishou?t=15654234781051565423470663"
-                                                       timetype="timestamp"
-                                                       onclick="pushLoginMsg(&#39;已登录&#39;,&#39;旧机回收&#39;)">旧机回收</a>
-                                                </dd>
-                                            </dl>
-                                        </div>
-                                    </div>
-
-                                    <div class="i-mall-huaban">
-                                        <ul class="clearfix">
-                                            <li>
-                                                <a href="https://www.vmall.com/member/newpoint?t=1565423478105"
-                                                   target="_blank" id="point"
-                                                   onclick="pushLoginMsg(&#39;已登录&#39;,&#39;积分&#39;)">
-                                                    <p class="p-price"><span id="userPointBalance">--</span></p>
-                                                    <p class="p-dec">积分</p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.vmall.com/member/coupon?t=1565423478105"
-                                                   rel="nofollow" target="_blank"
-                                                   onclick="pushLoginMsg(&#39;已登录&#39;,&#39;优惠券&#39;)">
-                                                    <p class="p-price"><span id="top-couponCount">--</span></p>
-                                                    <p class="p-dec">优惠券</p>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.vmall.com/member/balance?t=1565423478105"
-                                                   rel="nofollow" target="_blank"
-                                                   onclick="pushLoginMsg(&#39;已登录&#39;,&#39;代金券&#39;)">
-                                                    <p class="p-price"><span id="balanceAmount">--</span></p>
-                                                    <p class="p-dec">代金券</p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="i-out">
-                                        <a href="https://www.vmall.com/account/logout" rel="nofollow">退出登录</a>
                                     </div>
                                 </div>
-                                <!-- 2017-06-19-个人信息-end -->
+                                <div class="i-mall-huaban">
+                                    <ul class="clearfix">
+                                        <li><a href="https://www.vmall.com/member/newpoint" target="_blank"
+                                               id="point"><p class="p-price"><span
+                                                id="userPointBalance">0</span></p>
+                                            <p class="p-dec">积分</p></a></li>
+                                        <li><a href="https://www.vmall.com/member/coupon" rel="nofollow"
+                                               target="_blank"><p class="p-price"><span
+                                                id="top-couponCount">-- </span></p>
+                                            <p class="p-dec">优惠券</p></a></li>
+                                        <li><a href="https://www.vmall.com/member/balance" rel="nofollow"
+                                               target="_blank"><p class="p-price"><span id="balanceAmount">0.00</span>
+                                        </p>
+                                            <p class="p-dec">代金券</p></a></li>
+                                    </ul>
+                                </div>
+                                <div class="i-out"><a href="{% url 'app:logout' %}">退出登录</a></div>
                             </div>
                         </div>
                     </div>
                 </li>
+
 
                 <!-- <li><a href="https://www.vmall.com/member/order?t=1565423478105timestamp" timeType="timestamp" onclick = "pushMyOrderMsg()">我的订单</a></li>-->
                 <li><a href="javascript:;" timetype="timestamp" onclick="pushMyOrderMsg()">我的订单</a></li>
 
-                <li>
-                    <div class="s-dropdown s-dropdown-link">
-                        <div class="h">
-                            <a class="icon-dropdown">客户服务</a>
-                        </div>
-                        <div class="b">
-                            <div class="dropdown-more">
-                                <dl>
-                                    <dt><a href="https://www.vmall.com/help/index.html" target="_blank">服务中心</a></dt>
-                                    <dt>
-                                        <a href="https://celia.consumer.huawei.com/vmall/#/?businessUUID=902d812b8bdb44e089e34544fb5d77e2&amp;from=06"
-                                           target="_blank">联系客服</a></dt>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="s-dropdown">
-                        <div class="h">
-                            <a href="https://www.vmall.com/order/nowConfirmcart#" target="_blank" class="icon-dropdown">网站导航</a>
-                        </div>
-                        <div class="b">
-                            <div class="dropdown-navs clearfix">
-                                <a href="https://www.vmall.com/">
-                                    <div class="dropdown-navs-icon"><span style="font-size: 0;">&nbsp;</span>商城首页</div>
-                                </a>
-                                <div class="fl" style="width: 185.0px;margin-top: 22.0px;margin-bottom: 20.0px;">
-                                    <div class="bold f16 black" style="margin-bottom: 8.0px;">频道</div>
-                                    <div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/huawei" target="_blank">华为专区</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/honor" target="_blank">荣耀专区</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="http://company.vmall.com/client.html" target="_blank">企业购</a></div>
-                                    </div>
-                                </div>
-                                <div class="fl" style="width: 185.0px;margin-top: 22.0px;margin-bottom: 20.0px;">
-                                    <div class="bold f16 black" style="margin-bottom: 8.0px;">产品</div>
-                                    <div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/list-36" target="_blank">手机</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/list-43" target="_blank">智能家居</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/list-40" target="_blank">平板&amp;笔记本</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/list-54" target="_blank">通用配件</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/list-59" target="_blank">智能穿戴</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/list-47" target="_blank">专属配件</a></div>
-                                    </div>
-                                </div>
-                                <div class="fl" style="width: 185.0px;margin-top: 22.0px;margin-bottom: 20.0px;">
-                                    <div class="bold f16 black" style="margin-bottom: 8.0px;">增值服务</div>
-                                    <div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/recycle" target="_blank">以旧换新</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/product/10086344499475.html#10086230774569"
-                                               target="_blank">礼品包装</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/order/tcsProductIndex"
-                                               target="_blank">补购保障</a></div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/order/batteryRenew"
-                                               target="_blank">一口价换电池</a></div>
-                                    </div>
-                                </div>
-                                <div class="fl" style="width: 185.0px;margin-top: 22.0px;margin-bottom: 20.0px;">
-                                    <div class="bold f16 black" style="margin-bottom: 8.0px;">会员</div>
-                                    <div>
-                                        <div class="fl"
-                                             style="width: 80.0px;margin-bottom: 4.0px;overflow: hidden;white-space: nowrap;">
-                                            <a href="https://www.vmall.com/privilege" target="_blank">会员频道</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="downloadApp">
-                    <div class="s-dropdown" data-tpl="jTplDownloadApp">
-                        <div class="h">
-                            <a class="icon-dropdown">手机版</a>
-                        </div>
-                    </div>
-                </li>
 
             </ul>
         </div>
@@ -980,8 +771,9 @@
         <div class="left">
             <!-- 2017-06-19-logo-文字-start -->
             <div class="logo logo-word">
-                <a href="https://www.vmall.com/" title="华为商城"><img src="/static/images/dingdan_images/AF2GXbxrWmRqvyNfYzCl.png"
-                                                                   alt="华为商城"></a>
+                <a href="https://www.vmall.com/" title="华为商城"><img
+                        src="/static/images/dingdan_images/AF2GXbxrWmRqvyNfYzCl.png"
+                        alt="华为商城"></a>
                 <span>确认订单</span>
             </div>
             <!-- 2017-06-19-logo-文字-end -->
@@ -1101,120 +893,122 @@
     <!--订单-表单 -->
     <div>
         <!--20170717-全局提示-start -->
-        <div class="login-prompt" id="login-prompt">订单含付款减库存商品，支付完成才会为您预留库存，库存不足时系统将自动取消未支付的订单。</div>
+
         <!--20170717-全局提示-end -->
 
         <div class="hr-20" id="order-address-hr"></div>
 
         <!-- 20170717-订单表单-地址-start -->
-        <div class="order-detail-area order-address" id="order-address-mod">
-            <div class="h">
-                收货地址
-                <a id="upAddAddressButton" href="javascript:;" onclick="ec.order.myAddress.add()"
-                   class="address-add-btn" style="display: none;">新增收货地址</a>
-            </div>
-            <div class="order-address-list" id="order-address-list">
-                <ul class="clearfix">
-                    <li id="address-empty">
-                        <div class="address-empty"><a href="javascript:;" class="address-add-btn"
-                                                      onclick="ec.order.myAddress.add()">新增收货地址</a></div>
-                    </li>
-                </ul>
-            </div>
-            <div class="f">
-                <div id="address-more">
-                    <a href="javascript:;" class="address-expand hide" style="display: none;">查看全部地址</a>
-                    <!--收缩class="address-shrink"-->
-                    <a href="javascript:;" class="address-shrink hide" style="display: none;">收起地址</a>
+        <form action="{% url 'app:confirm_buy' %}" method="post">
+            {% csrf_token %}
+            <div class="order-detail-area order-address" id="order-address-mod">
+                <div class="h">
+                    默认收货地址
+                    <div>
+                        <table>
+                            <tr>
+                                <td align=center width="300px">地址</td>
+                                <td align=center width="150px">收件人</td>
+                                <td align=center width="150px">手机号</td>
+                            </tr>
+                            <tr>
+                                <td align=center width="300px">{{ addrs.addr }}</td>
+                                <td align=center>{{ addrs.receivername }}</td>
+                                <td align=center>{{ addrs.receivertel }}</td>
+                            </tr>
+                            {#                        <a href="{% url 'app:receive_addr' %}">修改默认地址</a>#}
+                        </table>
+                        <input type="hidden" value="{{ addrs.rid }}" name="dizhi">
+                    </div>
+
                 </div>
+
             </div>
-            <input name="orderDistrict" id="order-district" type="hidden">
-        </div>
-        <!--20170717-订单表单-地址-end -->
+            <!--20170717-订单表单-地址-end -->
 
-        <div class="hr-10"></div>
+            <div class="hr-10"></div>
 
-        <!--20170717-订单表单-发票信息-start -->
-        <div class="order-detail-area order-invoice hide">
-            <input type="hidden" id="huaweiTerminalName" name="huaweiTerminalName" value="华为终端（东莞）有限公司">
-            <input type="hidden" id="invoiceLimitCorp-0" value="华为终端(东莞)有限公司">
-            <input type="hidden" id="invoiceLimitCorp-1" value="华为终端(东莞)有限公司">
-            <input type="hidden" id="invoiceLimitCorp-2" value="华为 终端(东莞)有限公司">
-            <input type="hidden" id="invoiceLimitCorp-3" value="华为终端 (东莞)有限公司">
-            <input type="hidden" id="invoiceLimitCorp-4" value="华为 终端(东莞)有限 公司">
-            <input type="hidden" id="invoiceLimitCorp-5" value="华为终端(东莞)有限 公司">
-            <input type="hidden" id="invoiceLimitCorp-6" value="华为终端 (东莞) 有限公司">
-            <input type="hidden" id="invoiceLimitCorp-7" value="华为 终端 (东莞)有限公司">
-            <input type="hidden" id="invoiceLimitCorp-8" value="华为终端(东莞) 有限公司">
-            <input type="hidden" id="invoiceLimitCorp-9" value="华为终端东莞有限公司">
-            <input type="hidden" id="invoiceLimitCorp-10" value="华为终端  (东莞) 有限公司">
-            <input type="hidden" id="invoiceLimitCorp-11" value="华为终端《东莞》有限公司">
-            <input type="hidden" id="invoiceLimitCorp-12" value="华为终端&lt;东莞&gt;有限公司">
-            <input type="hidden" id="invoiceLimitCorp-13" value="华为终端有限公司">
-            <input type="hidden" id="invoiceLimitCorp-14" value="华 为 终 端 有 限 公 司">
-            <input type="hidden" id="invoiceLimitCorp-15" value="华 为终端有限公司">
-            <input type="hidden" id="invoiceLimitCorp-16" value="华为 终端有限公司">
-            <input type="hidden" id="invoiceLimitCorp-17" value="华为终 端有限公司">
-            <input type="hidden" id="invoiceLimitCorp-18" value="华为终端 有限公司">
-            <input type="hidden" id="invoiceLimitCorp-19" value="华为终端有 限公司">
-            <input type="hidden" id="invoiceLimitCorp-20" value="华为终端有限 公司">
-            <input type="hidden" id="invoiceLimitCorp-21" value="华为终端有限公 司">
-            <input type="hidden" id="invoiceLimitCorp-22" value="华为终端有限公司，">
-            <input type="hidden" id="invoiceLimitCorp-23" value="华为终端有限公司.">
-            <input type="hidden" id="invoiceLimitCorp-24" value=".华为终端有限公司">
-            <input type="hidden" id="invoiceLimitCorp-25" value="华为终端有限公司北京分公司">
-            <input type="hidden" id="isProxyOrder" name="isProxyOrder" value="false">
-            <input name="shopCode" id="order-shopCode" type="hidden" value="">
-            <input type="hidden" id="invoiceCorpMsg" value="华为商城销售实体为“华为终端有限公司”，购方主体不能与销方相同，请更换您的发票抬头">
-        </div>
-        <!--20170717-订单表单-发票信息-end -->
+            <!--20170717-订单表单-发票信息-start -->
+            {#        <div class="order-detail-area order-invoice hide">#}
+            {#            <input type="hidden" id="huaweiTerminalName" name="huaweiTerminalName" value="华为终端（东莞）有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-0" value="华为终端(东莞)有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-1" value="华为终端(东莞)有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-2" value="华为 终端(东莞)有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-3" value="华为终端 (东莞)有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-4" value="华为 终端(东莞)有限 公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-5" value="华为终端(东莞)有限 公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-6" value="华为终端 (东莞) 有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-7" value="华为 终端 (东莞)有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-8" value="华为终端(东莞) 有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-9" value="华为终端东莞有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-10" value="华为终端  (东莞) 有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-11" value="华为终端《东莞》有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-12" value="华为终端&lt;东莞&gt;有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-13" value="华为终端有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-14" value="华 为 终 端 有 限 公 司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-15" value="华 为终端有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-16" value="华为 终端有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-17" value="华为终 端有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-18" value="华为终端 有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-19" value="华为终端有 限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-20" value="华为终端有限 公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-21" value="华为终端有限公 司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-22" value="华为终端有限公司，">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-23" value="华为终端有限公司.">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-24" value=".华为终端有限公司">#}
+            {#            <input type="hidden" id="invoiceLimitCorp-25" value="华为终端有限公司北京分公司">#}
+            {#            <input type="hidden" id="isProxyOrder" name="isProxyOrder" value="false">#}
+            {#            <input name="shopCode" id="order-shopCode" type="hidden" value="">#}
+            {#            <input type="hidden" id="invoiceCorpMsg" value="华为商城销售实体为“华为终端有限公司”，购方主体不能与销方相同，请更换您的发票抬头">#}
+            {#        </div>#}
+            <!--20170717-订单表单-发票信息-end -->
 
-        <!--20170717-清分 -->
-        <form id="goPayDirect" action="https://www.vmall.com/order/XXXX">
-            <input name="ips" id="direct-Ips" type="hidden">
-            <input name="nextOrder" id="NextPay-Ips" type="hidden">
-            <input name="CsrfToken" type="hidden" value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>
-
-        <form id="tokenConfirm" action="https://www.vmall.com/order/XXXX" autocomplete="off" method="post">
-
-            <input name="CsrfToken" type="hidden" value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>
-
-        <form id="validateForward" action="https://www.vmall.com/order/validateForward" method="post">
-            <input name="CsrfToken" type="hidden" value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>
-
-
-        <form id="order-confirm-form" action="https://www.vmall.com/order/createcart" autocomplete="off" method="post">
-            <input name="consigneeAddressId" id="order-address" type="hidden">
-            <input name="orderReq" type="hidden"
-                   value="[{&quot;itemId&quot;:&quot;2601010102603&quot;,&quot;qty&quot;:&quot;1&quot;,&quot;itemType&quot;:&quot;S0&quot;,&quot;gifts&quot;:[],&quot;subOrderItemReqArgs&quot;:[]}]">
-            <input name="couponCodeList" id="couponCodeList" type="hidden">
-            <input name="deliveryMethod" id="order-deliveryMethod" type="hidden" value="1">
-            <input name="couponCode" id="order-couponCode" type="hidden">
-            <input type="hidden" name="_sf" value="4658Vmall">
-            <input name="usePointFlag" id="usePointFlag" type="hidden" value="false">
-            <input name="usePetalFlag" id="usePetalFlag" type="hidden" value="false">
-            <input name="interestOrder" id="interestInfo" type="hidden" value="">
-            <input name="state" id="order-state" type="hidden" value="0">
-
-            <input name="orderType" id="orderType" type="hidden" value="0">
-            <input name="shopCodes" id="order-shopCodes" type="hidden" value="VMALL-HUAWEIDEVICE|">
-            <input name="effectiveListVMALL-HUAWEIDEVICE" id="order-effectiveListVMALL-HUAWEIDEVICE" type="hidden"
-                   value="3|50">
-            <input name="uneffectiveListVMALL-HUAWEIDEVICE" id="order-uneffectiveListVMALL-HUAWEIDEVICE" type="hidden"
-                   value="">
-            <input class="order-titleType" name="titleTypeVMALL-HUAWEIDEVICE" id="order-titleTypeVMALL-HUAWEIDEVICE"
-                   type="hidden" value="50">
-            <input name="invoiceTitleVMALL-HUAWEIDEVICE" id="order-invoiceTitleVMALL-HUAWEIDEVICE" type="hidden"
-                   value="个人">
-            <input name="taxpayerIdentityNumVMALL-HUAWEIDEVICE" id="order-taxpayerIdentityNumVMALL-HUAWEIDEVICE"
-                   type="hidden" value="">
-            <input name="vatInvoiceJsonVMALL-HUAWEIDEVICE" id="order-vatInvoiceJsonVMALL-HUAWEIDEVICE" type="hidden">
-            <input name="vatInvoiceCompanyVMALL-HUAWEIDEVICE" id="order-vatInvoiceCompanyVMALL-HUAWEIDEVICE"
-                   type="hidden">
-
-            <input name="vatInvoiceDeliveryJsonVMALL-HUAWEIDEVICE" id="order-vatInvoiceDeliveryJsonVMALL-HUAWEIDEVICE"
-                   type="hidden">
-            <input name="CsrfToken" type="hidden" value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>
+            <!--20170717-清分 -->
+            {#        <form id="goPayDirect" action="https://www.vmall.com/order/XXXX">#}
+{#            <input name="ips" id="direct-Ips" type="hidden">#}
+{#            <input name="nextOrder" id="NextPay-Ips" type="hidden">#}
+{#            <input name="CsrfToken" type="hidden" value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>#}
+{##}
+{#        <form id="tokenConfirm" action="https://www.vmall.com/order/XXXX" autocomplete="off" method="post">#}
+{##}
+{#            <input name="CsrfToken" type="hidden" value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>#}
+{##}
+{#        <form id="validateForward" action="https://www.vmall.com/order/validateForward" method="post">#}
+{#            <input name="CsrfToken" type="hidden" value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>#}
+{##}
+{##}
+{#        <form id="order-confirm-form" action="https://www.vmall.com/order/createcart" autocomplete="off" method="post">#}
+{#            <input name="consigneeAddressId" id="order-address" type="hidden">#}
+{#            <input name="orderReq" type="hidden"#}
+{#                   value="[{&quot;itemId&quot;:&quot;2601010102603&quot;,&quot;qty&quot;:&quot;1&quot;,&quot;itemType&quot;:&quot;S0&quot;,&quot;gifts&quot;:[],&quot;subOrderItemReqArgs&quot;:[]}]">#}
+{#            <input name="couponCodeList" id="couponCodeList" type="hidden">#}
+{#            <input name="deliveryMethod" id="order-deliveryMethod" type="hidden" value="1">#}
+{#            <input name="couponCode" id="order-couponCode" type="hidden">#}
+{#            <input type="hidden" name="_sf" value="4658Vmall">#}
+{#            <input name="usePointFlag" id="usePointFlag" type="hidden" value="false">#}
+{#            <input name="usePetalFlag" id="usePetalFlag" type="hidden" value="false">#}
+{#            <input name="interestOrder" id="interestInfo" type="hidden" value="">#}
+{#            <input name="state" id="order-state" type="hidden" value="0">#}
+{##}
+{#            <input name="orderType" id="orderType" type="hidden" value="0">#}
+{#            <input name="shopCodes" id="order-shopCodes" type="hidden" value="VMALL-HUAWEIDEVICE|">#}
+{#            <input name="effectiveListVMALL-HUAWEIDEVICE" id="order-effectiveListVMALL-HUAWEIDEVICE" type="hidden"#}
+{#                   value="3|50">#}
+{#            <input name="uneffectiveListVMALL-HUAWEIDEVICE" id="order-uneffectiveListVMALL-HUAWEIDEVICE" type="hidden"#}
+{#                   value="">#}
+{#            <input class="order-titleType" name="titleTypeVMALL-HUAWEIDEVICE" id="order-titleTypeVMALL-HUAWEIDEVICE"#}
+{#                   type="hidden" value="50">#}
+{#            <input name="invoiceTitleVMALL-HUAWEIDEVICE" id="order-invoiceTitleVMALL-HUAWEIDEVICE" type="hidden"#}
+{#                   value="个人">#}
+{#            <input name="taxpayerIdentityNumVMALL-HUAWEIDEVICE" id="order-taxpayerIdentityNumVMALL-HUAWEIDEVICE"#}
+{#                   type="hidden" value="">#}
+{#            <input name="vatInvoiceJsonVMALL-HUAWEIDEVICE" id="order-vatInvoiceJsonVMALL-HUAWEIDEVICE" type="hidden">#}
+{#            <input name="vatInvoiceCompanyVMALL-HUAWEIDEVICE" id="order-vatInvoiceCompanyVMALL-HUAWEIDEVICE"#}
+{#                   type="hidden">#}
+{##}
+{#            <input name="vatInvoiceDeliveryJsonVMALL-HUAWEIDEVICE" id="order-vatInvoiceDeliveryJsonVMALL-HUAWEIDEVICE"#}
+{#                   type="hidden">#}
+{#            <input name="CsrfToken" type="hidden" value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>#}
     </div>
 
     <div class="hr-10"></div>
@@ -1223,152 +1017,135 @@
         <div class="order-detail clearfix" id="order-pro-list">
 
             <div class="order-list">
+                {% for i in goods %}
+                    <div class="order-list-detail">
 
-                <div class="order-list-detail">
+                        <div class="order-main clearfix ">
 
-                    <div class="order-main clearfix ">
-                        <a style="cursor:default" ahref="/product/10086102942203.html#2601010102603" class="p-img"
-                           target="_blank">
-                            <img alt="HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB 全网通版（天空之境）"
-                                 src="./确认订单华为商城_files/142_142_1555464685019mp.png">
+                            <a style="cursor:default" ahref="/product/10086102942203.html#2601010102603" class="p-img"
+                               target="_blank">
+                                {% for img in images %}
+                                    {% if img.gid == i.gid %}
+                                        <img src="{{ img.imgurl }}"></a>
+                                    {% endif %}
+                                {% endfor %}
 
-                        </a>
-                        <ul class="">
-                            <li>
-                                <a style="cursor:default" ahref="/product/10086102942203.html#2601010102603"
-                                   class="p-name" title="HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB 全网通版（天空之境）"
-                                   target="_blank" seed="item-name">HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB
-                                    全网通版（天空之境）</a>
-                                <input type="hidden" class="skuCodeQuanClass" value="1" id="2601010102603">
-                            </li>
-                            <li>x1</li>
-                            <li class="p-price">
-                                ¥&nbsp;4988.00
-                            </li>
-                        </ul>
-                    </div>
-
-
-                    <!--自选套餐-->
-
-
-                    <div class="order-parts clearfix">
-                        <h2>赠品</h2>
-                        <div class="order-coupon-list">
-                            <ul>
+                            </a>
+                            <ul class="">
                                 <li>
-                                    <a href="javascript:;" class="p-name">【华为】满200元减20元配件叠加券</a>
+                                    <a style="cursor:default" ahref="/product/10086102942203.html#2601010102603"
+                                       class="p-name"
+                                       title="HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB 全网通版（天空之境）"
+                                       target="_blank" seed="item-name">{{ i.goodname }}&nbsp;&nbsp;{{ i.color }}&nbsp;&nbsp;{{ i.versions }}</a>
+                                    <input type="hidden" class="skuCodeQuanClass" value="1" id="2601010102603">
                                 </li>
-                                <li>x1</li>
-                                <li></li>
+                                {% for key,value in num.items %}
+                                    {% if key == i %}
+                                        <li>x{{ value }}</li>
+                                        <input type="hidden", value="{{ value }}" name="{{ i.goodcode }}">
+                                        <li class="p-price">
+                                            {% for k,pri in pricess.items %}
+                                                {% if k == i %}
+                                                    ¥&nbsp;{% widthratio pri 1 value %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
-                            <ul>
-                                <li>
-                                    <a href="javascript:;" class="p-name">【华为】满100元减10元配件叠加券</a>
-                                </li>
-                                <li>x1</li>
-                                <li></li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a href="javascript:;" class="p-name">【华为】满50元减5元配件叠加券</a>
-                                </li>
-                                <li>x1</li>
-                                <li></li>
-                            </ul>
+
                         </div>
-                    </div>
 
+                        <!--自选套餐-->
+
+                    </div>
+                {% endfor %}
+            </div>
+
+
+            <div class="order-list-info">
+                <!--20170717-订单表单-发票信息-start -->
+                <div class="order-invoice">
+                    <div class="h"><span>发票信息</span><em>注：如果商品由第三方卖家销售，发票内容由其卖家决定，发票由卖家开具并寄出</em></div>
+                    <div class="b">
+                        <em id="invoice-info-typeVMALL-HUAWEIDEVICE">电子普通发票</em>
+                        <span id="invoice-info-titleVMALL-HUAWEIDEVICE">个人</span>
+                        <a id="invoiceEditVMALL-HUAWEIDEVICE" class="invoiceEdit" href="javascript:;"
+                           onclick="ec.order.invoice.popup.edit(&#39;VMALL\x2DHUAWEIDEVICE&#39;);">修改</a>
+                    </div>
                 </div>
+                <!--20170717-订单表单-发票信息-end -->
+                <input type="hidden" value="" id="routingTagID">
+                <!-- 20170718-订单优惠-start -->
+                <div class="order-discount">
+                    <div class="h"><span>优惠与抵用</span><em>仅适用于自营实物商品</em></div>
 
 
-                <!--自营订单-赠品-start-->
+                    <!--仅仅只是为了上传数据没有任何逻辑-->
+                    {#                    <form id="order-normal-form" autocomplete="off" method="post">#}
+                    {#                        <input name="couSkuIds" type="hidden" value="2601010102603">#}
+                    {#                        <input name="couSkuCode" type="hidden" value="2601010102603">#}
+                    {#                        <input name="couSkuNum" type="hidden" value="1">#}
+                    {#                        <input name="CsrfToken" type="hidden"#}
+                    {#                               value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>#}
+                    <!--仅仅只是为了上传数据没有任何逻辑-->
 
-                <!--自营订单-赠品-end-->
-
-                <div class="order-list-info">
-                    <!--20170717-订单表单-发票信息-start -->
-                    <div class="order-invoice">
-                        <div class="h"><span>发票信息</span><em>注：如果商品由第三方卖家销售，发票内容由其卖家决定，发票由卖家开具并寄出</em></div>
-                        <div class="b">
-                            <em id="invoice-info-typeVMALL-HUAWEIDEVICE">电子普通发票</em>
-                            <span id="invoice-info-titleVMALL-HUAWEIDEVICE">个人</span>
-                            <a id="invoiceEditVMALL-HUAWEIDEVICE" class="invoiceEdit" href="javascript:;"
-                               onclick="ec.order.invoice.popup.edit(&#39;VMALL\x2DHUAWEIDEVICE&#39;);">修改</a>
-                        </div>
-                    </div>
-                    <!--20170717-订单表单-发票信息-end -->
-                    <input type="hidden" value="" id="routingTagID">
-                    <!-- 20170718-订单优惠-start -->
-                    <div class="order-discount">
-                        <div class="h"><span>优惠与抵用</span><em>仅适用于自营实物商品</em></div>
-
-
-                        <!--仅仅只是为了上传数据没有任何逻辑-->
-                        <form id="order-normal-form" autocomplete="off" method="post">
-                            <input name="couSkuIds" type="hidden" value="2601010102603">
-                            <input name="couSkuCode" type="hidden" value="2601010102603">
-                            <input name="couSkuNum" type="hidden" value="1">
-                            <input name="CsrfToken" type="hidden"
-                                   value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>
-                        <!--仅仅只是为了上传数据没有任何逻辑-->
-
-                        <!--计算运费begin-->
-                        <script>
-                            ec.load("ajax");
-                            ec.pkg("ec.order");
-                            ec.order.deliveryCharge = 0;
-                        </script>
-                        <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
-                                src="./确认订单华为商城_files/jquery.form-4.2.2.js" charset="utf-8"></script>
-                        <script>(function () {
-                            var time = 0, el = document.getElementById('jsapi_loader7');
-                            if (!el || (el.readyState && 'complete' != el.readyState)) {
-                                if (time < 10) {
-                                    setTimeout(arguments.callee, 30);
-                                    time++;
-                                } else {
-                                    logger.error('load the script of id jsapi_loader7 fail!');
-                                }
-                                return;
+                    <!--计算运费begin-->
+                    <script>
+                        ec.load("ajax");
+                        ec.pkg("ec.order");
+                        ec.order.deliveryCharge = 0;
+                    </script>
+                    <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
+                            src="./确认订单华为商城_files/jquery.form-4.2.2.js" charset="utf-8"></script>
+                    <script>(function () {
+                        var time = 0, el = document.getElementById('jsapi_loader7');
+                        if (!el || (el.readyState && 'complete' != el.readyState)) {
+                            if (time < 10) {
+                                setTimeout(arguments.callee, 30);
+                                time++;
+                            } else {
+                                logger.error('load the script of id jsapi_loader7 fail!');
                             }
-                            ol._setLoadStatus("jquery.form", "complete");
-                        })();</script>
-                        <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
-                                src="/static/js/dingdan_js/ajax.js" charset="utf-8"></script>
-                        <script>(function () {
-                            var time = 0, el = document.getElementById('jsapi_loader8');
-                            if (!el || (el.readyState && 'complete' != el.readyState)) {
-                                if (time < 10) {
-                                    setTimeout(arguments.callee, 30);
-                                    time++;
-                                } else {
-                                    logger.error('load the script of id jsapi_loader8 fail!');
-                                }
-                                return;
+                            return;
+                        }
+                        ol._setLoadStatus("jquery.form", "complete");
+                    })();</script>
+                    <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
+                            src="/static/js/dingdan_js/ajax.js" charset="utf-8"></script>
+                    <script>(function () {
+                        var time = 0, el = document.getElementById('jsapi_loader8');
+                        if (!el || (el.readyState && 'complete' != el.readyState)) {
+                            if (time < 10) {
+                                setTimeout(arguments.callee, 30);
+                                time++;
+                            } else {
+                                logger.error('load the script of id jsapi_loader8 fail!');
                             }
-                            ol._setLoadStatus("ajax", "complete");
-                        })();</script>
-                        <!--计算运费end-->
+                            return;
+                        }
+                        ol._setLoadStatus("ajax", "complete");
+                    })();</script>
+                    <!--计算运费end-->
 
-                        <!--自营商品优惠券管理-->
-                        <form autocomplete="off" method="post"><!--不是真正意义上的表单 是为了 防止firefox刷新的时候 页面数据没有刷新-->
-                            <div class="order-coupon">
-                                <span id="order-couponDiscount" class="hide"></span>
-                                <input id="couponInfo" type="hidden" value="">
-                                <p id="coupon-info-desc"><span id="coupon-info-amount"></span><b id="b_yuan"><span
-                                        id="coupon-info-discount"></span></b></p>
-                                <a href="javascript:;" class="hide"
-                                   onclick="ec.order.openPopCoupon(&#39;order-coupon-box&#39;,700,500,&#39;使用优惠券&#39;);"
-                                   id="coupon-edit-link">修改</a>
-                                <a href="javascript:;" class="red"
-                                   onclick="ec.order.openPopCoupon(&#39;order-coupon-box&#39;,700,500,&#39;使用优惠券&#39;);"
-                                   id="coupon-use-link">使用优惠券</a>
-                            </div>
-                            <input name="CsrfToken" type="hidden"
-                                   value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>
+                    <!--自营商品优惠券管理-->
+{#                    <form autocomplete="off" method="post"><!--不是真正意义上的表单 是为了 防止firefox刷新的时候 页面数据没有刷新-->#}
+{#                        <div class="order-coupon">#}
+{#                            <span id="order-couponDiscount" class="hide"></span>#}
+{#                            <input id="couponInfo" type="hidden" value="">#}
+{#                            <p id="coupon-info-desc"><span id="coupon-info-amount"></span><b id="b_yuan"><span#}
+{#                                    id="coupon-info-discount"></span></b></p>#}
+{#                            <a href="javascript:;" class="hide"#}
+{#                               onclick="ec.order.openPopCoupon(&#39;order-coupon-box&#39;,700,500,&#39;使用优惠券&#39;);"#}
+{#                               id="coupon-edit-link">修改</a>#}
+{#                            <a href="javascript:;" class="red"#}
+{#                               onclick="ec.order.openPopCoupon(&#39;order-coupon-box&#39;,700,500,&#39;使用优惠券&#39;);"#}
+{#                               id="coupon-use-link">使用优惠券</a>#}
+{#                        </div>#}
+{#                        <input name="CsrfToken" type="hidden"#}
+{#                               value="635304778B8170028698A07B84ED2D761BCF09F8F41A38AE"></form>#}
 
-                        <textarea id="order-coupon-tpl" class="hide">        &lt;!--20170728-优惠券-start --&gt;
+                    <textarea id="order-coupon-tpl" class="hide">        &lt;!--20170728-优惠券-start --&gt;
         &lt;div class="order-roll"&gt;
             &lt;div class="order-roll-tab"&gt;
                 &lt;a href="javascript:;" class="current" id="coupon_tab" onclick="javascript:ec.order.couponTabChange('coupon_tab');"&gt;可用优惠券&lt;/a&gt;
@@ -1424,138 +1201,138 @@
         &lt;/div&gt;
         &lt;!--优惠券码操作区end--&gt;
       </textarea>
-                        <!--自营商品优惠券管理-->
+                    <!--自营商品优惠券管理-->
 
-                        <!--后壳定制和O2O和订金订单不支持积分和花瓣使用-->
-                        <div class="order-discount-choose">
-                            <i class="icon-choose-normal icon-choose-disabled" id="point-checkbox"></i>
-                            <span id="point_des"><span>共</span><span id="point-count">0</span>积分<span id="canUserPoint">，不足100不可使用</span></span>
-                            <div class="order-discount-detail" id="pointShow" style="display: none;">，使用
-                                <div class="discount-integral">
-                                    <a class="discount-integral-btn"><span id="pointDefault">0</span></a>
-                                    <div class="discount-integral-con hide" id="pointDetail">
-                                        <div class="discount-integral-main">
-                                            <ul class="clearfix">
-                                            </ul>
-                                        </div>
-                                        <span class="tips">
+                    <!--后壳定制和O2O和订金订单不支持积分和花瓣使用-->
+                    <div class="order-discount-choose">
+                        <i class="icon-choose-normal icon-choose-disabled" id="point-checkbox"></i>
+                        <span id="point_des"><span>共</span><span id="point-count">0</span>积分<span id="canUserPoint">，不足100不可使用</span></span>
+                        <div class="order-discount-detail" id="pointShow" style="display: none;">，使用
+                            <div class="discount-integral">
+                                <a class="discount-integral-btn"><span id="pointDefault">0</span></a>
+                                <div class="discount-integral-con hide" id="pointDetail">
+                                    <div class="discount-integral-main">
+                                        <ul class="clearfix">
+                                        </ul>
+                                    </div>
+                                    <span class="tips">
                             <h2>积分使用说明</h2>
                             <p>积分抵扣不超过订单中可抵扣商品实付金额的30%</p>
                         </span>
-                                    </div>
                                 </div>
-                                <span id="pointUsePlan"></span>
                             </div>
-                            <a href="javascript:;"
-                               onclick="ec.order.openPopWindow(&#39;point-rule-tpl&#39;,&#39;order-point-rule-box&#39;,700,435,&#39;积分规则&#39;);">积分规则</a>
+                            <span id="pointUsePlan"></span>
                         </div>
-                        <div class="order-discount-choose">
-                            <i class="icon-choose-normal icon-choose-disabled" id="huaban-checkbox"
-                               onclick="ec.order.huaban.toggle()"></i>
-                            <p><span id="huaban_des">花瓣余额&nbsp;0</span><span id="huaban-count"></span><span
-                                    id="canUserPetal">，不足100不可使用</span></p>
-                            <a href="javascript:;"
-                               onclick="ec.order.openPopWindow(&#39;flower-rule-tpl&#39;,&#39;order-flower-rule-box&#39;,700,435,&#39;花瓣使用规则&#39;);">花瓣使用规则</a>
-                        </div>
-                        <div class="order-discount-tip hide" id="order-discount-tip">注：积分与花瓣合计抵扣不能超过自营商品应付款的30%</div>
+                        <a href="javascript:;"
+                           onclick="ec.order.openPopWindow(&#39;point-rule-tpl&#39;,&#39;order-point-rule-box&#39;,700,435,&#39;积分规则&#39;);">积分规则</a>
                     </div>
-                    <!-- 20170718-订单优惠-end -->                </div>
-            </div>
-
-            <div class="order-total"><!-- 20170718-订单结算-start -->
-                <!--TCS商品不展示快递方式-->
-                <div class="order-total-info">
-                    <p>商品由<span>华为商城</span>选择合作快递</p>
-                    <p>
-                        <strong id="order_confirm_tipsMsg" style="display: none;"></strong>
-                        <em id="order_confirm_tips" class="hide" style="display: none;"><b>“预计送达时间”功能处于试运营，可能会略有偏差，最终以实际到货时间为准，如有疑问请您联系商城客服。感谢您对华为商城的支持和理解！</b></em>
-                    </p>
-                </div>
-                <div class="order-total-price">
-                    <div class="clearfix">
-                        <div class="order-price-detail">
-                            <ul>
-                                <li><strong>商品总金额：</strong>
-                                    <span>
-		                                ¥&nbsp;<em id="order-cost-area" data-oldval=" 4988.00">4988.00</em>
-	                       </span>
-                                </li>
-
-                                <li><strong>运费：</strong>
-                                    <span>
-		                               ¥&nbsp;<em id="order-deliveryCharge">0.00</em>
-		                        </span>
-                                </li>
-
-                                <li><strong>优惠金额：</strong>
-                                    <span>
-		                                <em class="order-total-activity">
-		                                    <i><span class="icon-sales">【华为】满100元减10元配件叠加券</span><span
-                                                    class="icon-sales">【华为】满50元减5元配件叠加券</span><span class="icon-sales">【华为】满200元减20元配件叠加券</span></i>
-		                                </em>
-		                            -&nbsp;¥&nbsp;<em>0.00</em>
-		                        </span>
-                                </li>
-                                <li>
-                                    <strong>结算金额：</strong>
-                                    <span><b></b>
-		              					<span><b>¥&nbsp;</b><b id="order-price-VMALL-HUAWEIDEVICE"
-                                                               data-oldval="4988.00">4988.00</b></span>
-		                            
-		                        </span>
-                                </li>
-                            </ul>
-
-
-                        </div>
+                    <div class="order-discount-choose">
+                        <i class="icon-choose-normal icon-choose-disabled" id="huaban-checkbox"
+                           onclick="ec.order.huaban.toggle()"></i>
+                        <p><span id="huaban_des">花瓣余额&nbsp;0</span><span id="huaban-count"></span><span
+                                id="canUserPetal">，不足100不可使用</span></p>
+                        <a href="javascript:;"
+                           onclick="ec.order.openPopWindow(&#39;flower-rule-tpl&#39;,&#39;order-flower-rule-box&#39;,700,435,&#39;花瓣使用规则&#39;);">花瓣使用规则</a>
                     </div>
-
+                    <div class="order-discount-tip hide" id="order-discount-tip">注：积分与花瓣合计抵扣不能超过自营商品应付款的30%</div>
                 </div>
-
-            </div><!--20170718-订单结算-end-->
+                <!-- 20170718-订单优惠-end -->                </div>
         </div>
-        <!--201701227-礼品购-start -->
-        <!--20171227-礼品购-end -->
-        <!--展示代销商品 start-->
-        <!-- 代销商品展示结束 -->    </div>
-    <div class="hr-10"></div>
-    <div class="order-detail-area clearfix">
-        <div class="order-submit"><!-- 20170718-订单提交-start -->
 
-            <div class="order-submit-info">
-                <div class="order-submit-price">应付总额：<b>¥<span id="payableTotal">4988.00</span></b></div>
-
-                <div class="order-submit-integral">
-                <span id="isHidePoint"><em>
-                可获得积分：<em id="canHavePoint">499</em></em></span>
+        <div class="order-total"><!-- 20170718-订单结算-start -->
+            <!--TCS商品不展示快递方式-->
+            <div class="order-total-info">
+                {#                <p>商品由<span>华为商城</span>选择合作快递</p>#}
+                <p>
+                    <strong id="order_confirm_tipsMsg" style="display: none;"></strong>
+                    <em id="order_confirm_tips" class="hide" style="display: none;"><b>“预计送达时间”功能处于试运营，可能会略有偏差，最终以实际到货时间为准，如有疑问请您联系商城客服。感谢您对华为商城的支持和理解！</b></em>
+                </p>
+            </div>
+            <div class="order-total-price">
+                <div class="clearfix">
+{#                    <div class="order-price-detail">#}
+{#                        <ul>#}
+{#                            <li><strong>商品总金额：</strong>#}
+{#                                <span>#}
+{#		                                ¥&nbsp;<em id="order-cost-area" data-oldval=" 4988.00">{{ zongji }}</em>#}
+{#	                       </span>#}
+{#                            </li>#}
+{##}
+{#                            <li><strong>运费：</strong>#}
+{#                                <span>#}
+{#		                               ¥&nbsp;<em id="order-deliveryCharge">0.00</em>#}
+{#		                        </span>#}
+{#                            </li>#}
+{##}
+{#                            <li><strong>优惠金额：</strong>#}
+{#                                <span>#}
+{#		                                <em class="order-total-activity">#}
+{#		                                    <i><span class="icon-sales">【华为】满100元减10元配件叠加券</span><span#}
+{#                                                    class="icon-sales">【华为】满50元减5元配件叠加券</span><span class="icon-sales">【华为】满200元减20元配件叠加券</span></i>#}
+{#		                                </em>#}
+{#		                            -&nbsp;¥&nbsp;<em>0.00</em>#}
+{#		                        </span>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <strong>结算金额：</strong>#}
+{#                                <span><b></b>#}
+{#		              					<span><b>¥&nbsp;</b><b id="order-price-VMALL-HUAWEIDEVICE"#}
+{#                                                               data-oldval="4988.00">{{ zongji }}</b></span>#}
+{#		                        </span>#}
+{#                                <input type="hidden" name="totalprice" value="{{ zongji }}">#}
+{#                            </li>#}
+{#                        </ul>#}
+{##}
+{#                    </div>#}
+                     <input type="hidden" name="totalprice" value="{{ zongji }}">
                 </div>
             </div>
-
-            <div class="order-submit-address" id="peopleTelAddressID" style="display: none;">
-                <ul>
-                    <li>
-                        <label>配送至：</label>
-                        <p id="deliveryAddress"><span id="addressID"></span></p>
-                    </li>
-                    <li>
-                        <p><span id="peopleID"></span><span id="telID"></span></p>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="clearfix hide" id="no-delivery-address-tips" style="display: block;">
-                <div class="report-errors"><span id="no-choose-address">无收货地址不可下单</span>，<a
-                        href="https://www.vmall.com/order/nowConfirmcart#" id="link-choose-address">点击填充</a></div>
-            </div>
-
-            <div class="clearfix">
-                <a href="javascript:;" id="checkoutSubmit" onclick="ec.order.submit();" class="order-submit-btn"
-                   seed="checkout-submit"><span>提交订单</span></a>
-            </div>
-        </div><!-- 20170718-订单提交-end -->
+        </div><!--20170718-订单结算-end-->
     </div>
-    <div class="hide" id="unpay-order"></div>
-    <div class="hide" id="erroCompany"></div>
+    <!--201701227-礼品购-start -->
+    <!--20171227-礼品购-end -->
+    <!--展示代销商品 start-->
+    <!-- 代销商品展示结束 -->    </div>
+<div class="hr-10"></div>
+<div class="order-detail-area clearfix">
+    <div class="order-submit"><!-- 20170718-订单提交-start -->
+
+        <div class="order-submit-info">
+            <div class="order-submit-price">应付总额：<b>¥<span id="payableTotal">{{ zongji }}</span></b></div>
+            <input type="hidden" value="{{ zongji }}" name="zongjiage">
+            <div class="order-submit-integral">
+                    <span id="isHidePoint"><em>
+                    可获得积分：<em id="canHavePoint">{% widthratio zongji 100 1 %}</em></em></span>
+            </div>
+        </div>
+
+        <div class="order-submit-address" id="peopleTelAddressID" style="display: none;">
+            <ul>
+                <li>
+                    <label>配送至：</label>
+                    <p id="deliveryAddress"><span id="addressID"></span></p>
+                </li>
+                <li>
+                    <p><span id="peopleID"></span><span id="telID"></span></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="clearfix hide" id="no-delivery-address-tips" style="display: block;">
+            <div class="report-errors"><span id="no-choose-address">无收货地址不可下单</span>，<a
+                    href="https://www.vmall.com/order/nowConfirmcart#" id="link-choose-address">点击填充</a></div>
+        </div>
+
+        <div class="clearfix">
+{#            <a href="javascript:;" id="checkoutSubmit" onclick="ec.order.submit();" class="order-submit-btn"#}
+{#               seed="checkout-submit"><span>提交订单</span></a>#}
+            <input type="submit" value="提交订单" style="color: white;width: 140px;height: 70px;font-size: 25px;background-color: red;border-radius: 10px;">
+        </div>
+    </div><!-- 20170718-订单提交-end -->
+</div>
+</form>
+<div class="hide" id="unpay-order"></div>
+<div class="hide" id="erroCompany"></div>
 </div>
 
 <div class="hr-45"></div>
@@ -2404,7 +2181,8 @@
                 <ul class="clearfix">
                     <li class="iconfont">
                         <a href="javascript:;"></a>
-                        <div class="service-code-img"><img src="/static/images/dingdan_images/20181116180507506.jpg"></div>
+                        <div class="service-code-img"><img src="/static/images/dingdan_images/20181116180507506.jpg">
+                        </div>
                     </li>
                     <li class="iconfont">
                         <a target="_blank" href="https://www.toutiao.com/c/user/52373534151/#mid=52586950033"
@@ -2461,18 +2239,7 @@
 </div>
 
 <!-- 2018-10-26-悬浮工具栏-start -->
-<div class="hungBar j-hungBar">
-    <div class="hungBar-content">
-        <a target="_blank" onclick="pushRightHelpMsg(1)" href="https://www.vmall.com/cart2" timetype="timestamp"
-           class="hungBar-cart" title="购物车"><span style="display:none;"></span><i>购物车</i></a>
-        <a target="_blank" id="tools-nav-service-robotim" onclick="pushRightHelpMsg(2)"
-           href="https://celia.consumer.huawei.com/vmall/#/?businessUUID=902d812b8bdb44e089e34544fb5d77e2&amp;enterurl=https%3A%2F%2Fwww.vmall.com%2Forder%2FnowConfirmcart&amp;k=1&amp;from=06&amp;remark="
-           class="hungBar-service" title="在线客服" style="display: block;"><i>在线客服</i></a>
-        <a id="tools-nav-survery" onclick="ec.survery.open();pushRightHelpMsg(3)" href="javascript:;"
-           class="hungBar-feedback" title="意见反馈" style="display: block;"><i>意见反馈</i></a>
-        <a href="javascript:;" class="hungBar-top" title="返回顶部" id="hungBar-top" style="display: none;"><i>返回顶部</i></a>
-    </div>
-</div>
+
 <!-- 2018-10-26-悬浮工具栏-end -->
 
 <!--意见反馈box-->
@@ -2581,7 +2348,8 @@
 <div class="footer-container">
     <div class="footer">
         <div class="footer-warrant-area clearfix"><p class="footer-warrant-logo fl"><a
-                href="https://www.vmall.com/"><img src="/static/images/dingdan_images/wLelYbpMVWbj9Xpaa5Fk.png" title="华为商城"></a></p>
+                href="https://www.vmall.com/"><img src="/static/images/dingdan_images/wLelYbpMVWbj9Xpaa5Fk.png"
+                                                   title="华为商城"></a></p>
             <div class="fl">
                 <ul class="footer-warrant-link">
                     <li><a href="https://www.huawei.com/cn/">华为集团</a></li>
@@ -2609,7 +2377,8 @@
                                                                                     src="/static/images/dingdan_images/20180522101715775.jpg"
                                                                                     title="TRUSTe隐私认证"></a> <a
                     class="fl" href="https://res.vmallres.com/pimages///sale/2019-04/Vhy8y3yxVJXg0FE74dh0.png"
-                    target="_blank"><img alt="电子营业执照" src="/static/images/dingdan_images/20160226162415360.png" title="电子营业执照"></a>
+                    target="_blank"><img alt="电子营业执照" src="/static/images/dingdan_images/20160226162415360.png"
+                                         title="电子营业执照"></a>
             </p></div>
     </div>
 </div>

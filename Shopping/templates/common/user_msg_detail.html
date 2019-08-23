@@ -1,0 +1,52 @@
+{% extends 'common/user0.html' %}
+
+{% block right %}
+    <div class="fr u-4-5"><!-- 20141212-栏目-start -->
+        <div class="section-header">
+            <div class="fl">
+                <h2><span>站内信</span></h2>
+            </div>
+        </div>
+        <!-- 20141212-栏目-end -->
+        <div class="hr-20"></div>
+        <!-- 20141218-站内信-内容-start -->
+        <div class="myMail-detail">
+            <div class="h">
+                <div class="mail-soure"><label>发信人：<span>华为商城</span></label><label>发送时间：<span>2019-01-07 17:15:29</span></label>
+                </div>
+                <h1>荣耀年货节，超值年货礼包限量送</h1>
+            </div>
+            <div class="b">
+                <p><span style="font-size:14px"><span style="font-family:arial,helvetica,sans-serif">多款热销潮品限时直降，还有超值优惠券等你领用，<a
+                        href="https://msale.vmall.com/honor.html?cid=98981">年终扫货快人一步&gt;&gt;</a></span></span></p>
+
+            </div>
+        </div>
+        <input type="hidden" id="isread" value="0">
+        <input type="hidden" id="msg_type" value="2">
+        <!-- 20141218-站内信-内容-end -->
+        <script>
+            ec.ready(function () {
+                $("#li-msg").css("color", "#ca141d");
+                $("#li-msg em").css("color", "#ca141d");
+                $("#pathTitle").html("站内信");
+                var isread = $("#isread").val();
+                var msg_type = $("#msg_type").val();
+                //未读状态且为评价或互动时未读数量减一
+                if (isread == 0) {
+                    if (msg_type == 3 || msg_type == 4) {
+                        var oldCount = ec.util.cookie.get("vmallMyCenterMsg");
+                        var newCount = parseInt(oldCount) - 1;
+                        if (newCount > 0) {
+                            $("#li-msg em").textS(newCount);
+                            $('#top-newMsgCount').html(newCount || 0);
+                        } else {
+                            $("#li-msg em").text("");
+                        }
+                        ec.util.cookie.set("vmallMyCenterMsg", newCount);
+                    }
+                }
+            });
+        </script>
+    </div>
+{% endblock %}

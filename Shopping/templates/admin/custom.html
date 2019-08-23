@@ -1,0 +1,236 @@
+{% extends 'admin/index.html' %}
+
+{% block head %}
+    {{ block.super }}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block right %}
+
+    <div class="right-menu">
+        <div class="main-hd">
+            <div class="page-teb">
+                <div class="l-tab-links">
+                    <ul style="left:0;">
+                        <li class="l-select">
+                            <a href="#">首页</a>
+                        </li>
+                        <li class="l-select">
+                            <a href="#">用户管理</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="l-tab-content" style="background:#fff;">
+                    <div class="tab-content-item">
+                        <div class="home">
+                            <!--员工管理   开始-->
+                            <div class="yg-gl">
+
+                                <form method="post" action="{% url 'admin:customs' %}">
+                                    {% csrf_token %}
+                                    <div class="yg-add">
+                                        {#                                    <button class="ui-xz" type="submit" value="新增" name="">#}
+                                        <input class="ui-xz1" type="submit" value="删除" name="">
+                                        <input class="ui-xz2" type="submit" value="提交" name="submit">
+                                        {#                                     <button class="ui-xz2" id="submit">提交</button>#}
+
+                                    </div>
+
+                                    <div class="yg-tab">
+                                        <div class="grid">
+                                            <div class="layoutitem" style="width:100%;border:none;">
+
+                                                <table class="gridbar" border="0" cellpadding="0" cellspacing="0">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>select</th>
+                                                        {#                                                        <th scope="col">ID</th>#}
+                                                        <th scope="col">HWID</th>
+                                                        <th>PASSWORD</th>
+                                                        <th>EMAIL</th>
+                                                        <th>TEL</th>
+                                                        <th>REALNAME</th>
+                                                        <th>NICKYNAME</th>
+                                                        <th>SEX</th>
+                                                        <th>POINTS</th>
+                                                        <th>VIP</th>
+                                                        {#                                                        <th>BIRTH</th>#}
+                                                        <th>REGTIME</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="ttt">
+                                                    {% for user in pager.object_list %}
+                                                        <tr>
+                                                            <td><input type="checkbox" name="{{ user.uid }}" value="0"
+                                                                       class="ischoose"></td>
+                                                            {#                                                            <td><input type="text" value="{{ user.uid }}"></td>#}
+                                                            <td><input type="text" value="{{ user.hwid }}"
+                                                                       name="hwid{{ user.uid }}"></td>
+                                                            <td><input type="password" value="{{ user.password }}"
+                                                                       name="password{{ user.uid }}"></td>
+                                                            <td><input type="text" value="{{ user.email }}"
+                                                                       name="email{{ user.uid }}"></td>
+                                                            <td><input type="text" value="{{ user.tel }}"
+                                                                       name="tel{{ user.uid }}"></td>
+                                                            <td><input type="text" value="{{ user.realname }}"
+                                                                       name="realname{{ user.uid }}"></td>
+                                                            <td><input type="text" value="{{ user.nickyname }}"
+                                                                       name="nickyname{{ user.uid }}"></td>
+                                                            <td><input type="text"
+                                                                       value="{% if user.sex == 1 %}男{% elif user.sex == 2 %}女{% else %}保密{% endif %}"
+                                                                       name="sex{{ user.uid }}">
+                                                            </td>
+                                                            <td><input type="text" value="{{ user.points }}"
+                                                                       name="points{{ user.uid }}"></td>
+                                                            <td><input type="text" value="{{ user.vipgrade }}"
+                                                                       name="vip{{ user.uid }}"></td>
+                                                            {#                                                            <td><input type="text" value="{{ user.birth }}" name="birth{{ user.uid }}"></td>#}
+                                                            <td><input type="text" value="{{ user.regtime }}"
+                                                                       name="regtime{{ user.uid }}"></td>
+                                                        </tr>
+                                                    {% endfor %}
+
+                                                    <tr id="addone">
+                                                        <td><input type="checkbox" name="0" value="0" class="ischoose">
+                                                        </td>
+                                                        <td><input type="text" value="" name="hwid0"></td>
+                                                        <td><input type="password" value="" name="password0"></td>
+                                                        <td><input type="text" value="" name="email0"></td>
+                                                        <td><input type="text" value="" name="tel0"></td>
+                                                        <td><input type="text" value="" name="realname0"></td>
+                                                        <td><input type="text" value="" name="nickyname0"></td>
+                                                        <td><input type="text" value="" name="sex0"></td>
+                                                        <td><input type="text" value="" name="points0"></td>
+                                                        <td><input type="text" value="" name="vip0"></td>
+                                                        {#                                                            <td><input type="text" value="" name="birth0"></td>#}
+                                                        <td><input type="text" value="" name="regtime0"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                            <div class="pagin">
+                                                {#                                                                                        <div class="message">共<i class="blue">1256</i>条记录，当前显示第&nbsp;<i#}
+                                                {#                                                                                                class="blue">2&nbsp;</i>页#}
+                                                {#                                                                                        </div>#}
+                                                {#                                                                                        <ul class="paginList">#}
+                                                {#                                                                                            <li class="paginItem"><a href="#"><span class="pagepre"><img#}
+                                                {#                                                                                                    src="img/jt1.png"></span></a></li>#}
+                                                {#                                                                                            <li class="paginItem"><a href="#">1</a></li>#}
+                                                {#                                                                                            <li class="paginItem current"><a href="#">2</a></li>#}
+                                                {#                                                                                            <li class="paginItem"><a href="#">3</a></li>#}
+                                                {#                                                                                            <li class="paginItem"><a href="#">4</a></li>#}
+                                                {#                                                                                            <li class="paginItem"><a href="#">5</a></li>#}
+                                                {#                                                                                            <li class="paginItem more"><a href="#">...</a></li>#}
+                                                {#                                                                                            <li class="paginItem"><a href="#">10</a></li>#}
+                                                {#                                                                                            <li class="paginItem"><a href="#"><span class="pagenxt"><img#}
+                                                {#                                                                                                    src="img/jt.png"></span></a></li>#}
+                                                {#                                                                                        </ul>#}
+                                                <nav aria-label="Page navigation">
+                                                    <ul class="pagination">
+                                                        <li  {% if not pager.has_previous %} class="disabled" {% else %}
+                                                                                             class="" {% endif %}>
+                                                            {% if pager.has_previous %}
+                                                                <a href="{% url 'admin:customs1' pager.previous_page_number %}"
+                                                                   aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                </a>
+                                                            {% else %}
+                                                                <a href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                </a>
+                                                            {% endif %}
+                                                        </li>
+                                                        {% for page in pager.page_range %}
+                                                            <li {% ifequal pager.number page %}
+                                                                class="active"{% endifequal %}><a
+                                                                    href="{% url 'admin:customs1' page %}">{{ page }}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                        <li {% if not pager.has_next %} class="disabled" {% else %}
+                                                                                        class="" {% endif %}>
+                                                            {% if pager.has_next %}
+                                                                <a href="{% url 'admin:customs1' pager.next_page_number %}"
+                                                                   aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                </a>
+                                                            {% else %}
+                                                                <a href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                </a>
+                                                            {% endif %}
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+{#                                            <div class="container">#}
+{##}
+{#                                            </div>#}
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <!--员工管理   结束-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(".ischoose").click(function () {
+
+            console.log($(this).index());
+            console.log($(this).val());
+            var a = $(this).val();
+            if (a == 1) {
+                console.log(100)
+                $(this).val(0)
+            }
+            if (a == 0) {
+                console.log(111)
+                $(this).val('1')
+            }
+        })
+    </script>
+
+    <script>
+        $(".yg-add input").click(function () {
+            $(this).attr('name', 'submit')
+            $(this).siblings().removeAttr('name')
+        })
+    </script>
+<script>
+        $("#kehu").load(function () {
+            $(this).removeClass("menu-list-01");
+            $(this).addClass("menu-list-02").siblings().removeClass("menu-list-02");
+            $(this).siblings().addClass("menu-list-01")
+        })
+        </script>
+    {#<script src="/static/js/user_js/jquery-3.4.1.min.js"></script>#}
+    {#<script>#}
+    {#    $("#add_data").click(function () {#}
+    {#        console.log(13);#}
+    {##}
+    {#        var tr =document.createElement('tr');#}
+    {#        var tag0 = "<td><input type='checkbox' name=''></td>"#}
+    {#        var tag1 = "<td><input type='text' value=''></td>";#}
+    {#        tr.appendChild(tag0)#}
+    {#        for(var i=0; i<11; i++) {#}
+    {#            tr.appendChild(tag1)#}
+    {#        }#}
+    {##}
+    {#        document.getElementById('ttt').appendChild(tr)#}
+    {##}
+    {#    })#}
+    {#</script>#}
+
+{% endblock %}

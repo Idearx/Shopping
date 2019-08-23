@@ -25,6 +25,7 @@ SECRET_KEY = '4=f+rfh!d8n3&hpffbfdor-gcwar=6_8=q+5udeb^^o1&@h(tb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'App.apps.AppConfig',
+    'rest_framework',
+    'Admin',
 ]
 
 MIDDLEWARE = [
@@ -79,10 +82,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hw_db',
-        'HOST':'10.0.108.121',
-        'USER':'root',
+        'HOST':'49.234.170.69',
+        'USER':'ooo',
         'PASSWORD':'123456',
         'PORT':3306
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'hw_db',
+        # 'HOST':'127.0.0.1',
+        # 'USER':'root',
+        # 'PASSWORD':'123456',
+        # 'PORT':3306
     # 'ENGINE': 'django.db.backends.mysql',
     # 'NAME': 'day03',
     # 'HOST':'127.0.0.1',
@@ -131,6 +140,7 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 # 配置公共的static静态文件的路径
+STATIC_ROOT = os.path.join(BASE_DIR,'collectstatic')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # 设置session的过期时间
@@ -150,3 +160,23 @@ EMAIL_HOST = 'smtp.126.com'
 EMAIL_HOST_USER = 'landmark_csl@126.com'
 EMAIL_HOST_PASSWORD = 'land123'
 EMAIL_FROM = 'python<landmark_csl@126.com>'
+
+# 分页配置
+# 每页记录个数
+COUNTOFPAGE = 2
+#每页的页码范围
+PAGERANGE = 6
+
+# 确保您的秘钥文件符合标准
+APP_PRIVATE_KEY = open(os.path.join(BASE_DIR,'app_private_key.pem')).read()
+ALIPAY_PUBLIC_KEY = open(os.path.join(BASE_DIR, 'alipay_public_key.pem')).read()
+ALI_APP_ID = "2016101300678293"
+
+# 设置上传文文件路路径
+MDEIA_ROOT = os.path.join(BASE_DIR,'static/upload')
+
+# 分页配置
+# 每页记录个数
+COUNTOFPAGE = 5
+# 每页的页码范围
+PAGERANGE = 10

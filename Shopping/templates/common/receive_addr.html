@@ -1,0 +1,222 @@
+{% extends 'common/user0.html' %}
+
+{% block right %}
+    <div class="fr u-4-5"><!-- 20141212-栏目-start -->
+        <div class="section-header">
+            <div class="fl">
+                <h2><span>收货地址管理</span></h2>
+            </div>
+        </div><!-- 20141212-栏目-end -->
+        <div class="hr-20"></div>
+        <!-- 20141216-我的收货地址-表单-编辑地址-start -->
+        <div class="myAddress-edit" id="myAddress-edit">
+            <div class="form-edit-panels" id="form-edit-panels">
+                <form id="myAddress-form" action="{% url 'app:receive_addr' %}" autocomplete="off" method="post"
+                      onsubmit="return ec.member.myAddress.save(this)" data-type="add">
+                    <input type="hidden" name="id" id="id" value="">
+                    <input type="hidden" name="randomFlag" id="randomFlag" value="No need">
+                    <input type="hidden" name="needL4Addr" id="needL4Addr" value="">
+                    <input type="hidden" name="needL4AddrG" id="needL4AddrG" value="">
+
+                    <input type="hidden" name="province" value="">
+                    <input type="hidden" name="city" value="">
+                    <input type="hidden" name="district" value="" validator="validator21565878230003">
+                    <input type="hidden" name="street" value="">
+
+                    <input type="hidden" name="provinceG" value="">
+                    <input type="hidden" name="cityG" value="">
+                    <input type="hidden" name="districtG" value="">
+                    <input type="hidden" name="streetG" value="">
+
+                    <div class="form-edit-table">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                            <tr>
+                                <th><span class="required">*</span><label for="consignee">收货人：</label></th>
+                                <td>
+                                    <input maxlength="20" type="text" name="consignee" id="consignee"
+                                           class="text span-130" validator="validator11565878230003">
+                                    <label id="consignee-msg"></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="required">*</span><label for="mobile">手机号码：</label></th>
+                                <td>
+                                    <div class="inline-block vam">
+                                        <label style="display: block; position: absolute; cursor: text; float: left; z-index: 2; color: rgb(153, 153, 153);"
+                                               class="text span-130 ime-disabled" for="mobile"></label><input
+                                            maxlength="20" type="text" name="mobile" placeholder="请输入11位手机号码" onblur="limitNum(event,this)"
+                                            onchange="limitNum(event,this)" id="mobile"
+                                            class="text span-130 ime-disabled" alt="tel-msg"
+                                            validator="validator51565878230008" style="z-index: 1;">
+                                        <label class="titlebox" for="phone">备选号码：</label>
+                                    </div>
+                                    <div class="inline-block vam relative"><label
+                                            style="display: block; position: absolute; cursor: text; float: left; z-index: 2; color: rgb(153, 153, 153);"
+                                            class="text span-310 ime-disabled" for="phone"></label><input
+                                            maxlength="50" type="text" name="phone" id="phone"
+                                            class="text span-310 ime-disabled" alt="tel-msg"
+                                            placeholder="固话或其他手机号码"
+                                            validator="validator61565878230009" style="z-index: 1;"></div>
+                                    <div><label id="tel-msg"></label></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2" class="selecte-vat"><span class="required">*</span><label
+                                        for="province">收货地址：</label></th>
+
+                            </tr>
+                            <tr class="tr-rel">
+                                <td>
+                                    <div class="inline-block relative">
+                                        <label style="display: block; position: absolute; cursor: text; float: left; z-index: 2; color: rgb(153, 153, 153);"
+                                               class="textarea span-574"
+                                               for="address"></label><textarea name="address" id="address"
+                                                                                      class="textarea span-574"
+                                                                                      placeholder="请填写您的地址"
+                                                                                      validator="validator31565878230005"
+                                                                                      style="z-index: 1;"></textarea>
+                                    </div>
+                                    <label class="vat" id="address-msg"></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="zipCode-add">邮编：</label></th>
+                                <td>
+                                    <input maxlength="6" type="text" class="text span-130 ime-disabled" name="zipCode"
+                                           id="zipCode" validator="validator41565878230006">
+                                    <label id="zipCode-msg"></label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>&nbsp;</th>
+                                <td>
+                                    <label class="inputbox"><input type="checkbox" class="checkbox" name="defaultFlag"
+                                                                   value="1"
+                                                                   id="myAddress-default"><span>设为默认收货地址</span></label>
+                                </td>
+                            </tr>
+                            <tr class="tr-action">
+                                <th>&nbsp;</th>
+                                <td>
+                                    <div id="form-edit-button">
+                                        <input type="submit" id="button-ok" class="button-action-ok" value="添加新地址"><a
+                                            href="javascript:;" id="button-cancel" class="button-action-cancel"
+                                            onclick="ec.member.myAddress.reset()"><span>清&nbsp;&nbsp;空</span></a>
+                                        <label class="label-info" id="submit-msg"></label>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <input name="CsrfToken" type="hidden" value="906F9CE6C5F3B11826D855686022BA61D023159AE193D1D2">
+                </form>
+            </div>
+        </div>
+        <!-- 20141216-我的收货地址-表单-编辑地址-end -->
+        <div class="hr-30"></div>
+        <!-- 20141216-我的收货地址-列表-start -->
+        <!--表单-我的收货地址 -->
+        <div class="myAddress-record hide" id="myAddress-record" style="display: block;">
+            <div class="list-group-title">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <thead>
+                    <tr>
+                        <th class="col-name">收货人</th>
+                        <th class="col-address">收货地址</th>
+                        <th class="col-zip">邮编</th>
+                        <th class="col-tel">手机/电话</th>
+                        <th class="col-operate">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="list-group" id="list-group">
+                <div class="list-group-item" id="myAddress-area-73192960">
+                    <table cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                        <tr>
+                            <td class="col-name">{{ consignee }}</td>
+                            <td class="col-address">{{ addr }}
+                            </td>
+                            <td class="col-zip">{{ you }}</td>
+                            <td class="col-tel"><p>{{ receivertel }}</p></td>
+                            <td class="col-operate"><p class="p-edit"><a class="edit" href="javascript:;"
+                                                                         onclick="ec.member.myAddress.edit(73192960);"
+                                                                         title="编辑"><span>编辑</span></a></p>
+                                <p class="p-del"><a class="del" href="javascript:;"
+                                                    onclick="ec.member.myAddress.del(this,73192960);" title="删除"><span>删除</span></a>
+                                </p>
+                                <p class="p-state"><span class="default">默认地址</span></p></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <textarea class="hide" id="success-tips">	&lt;!-- 20141219-我的地址-编辑成功-start --&gt;
+    &lt;div class="box-right-1"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+</textarea>
+        <input type="hidden" id="gouldAddress" name="unionPaySwitch" value="1">
+        <script src="/static/js/user_js/address_common.min.js?20170626"></script>
+        <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/jquery.form-4.2.2.js" charset="utf-8"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader7');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader7 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("jquery.form", "complete");
+        })();</script>
+        <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/ajax.js" charset="utf-8"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader8');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader8 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("ajax", "complete");
+        })();</script>
+        <script id="jsapi_loader9" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/bigInt.min.js"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader9');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader9 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("dh/bigInt.min.js", "complete");
+        })();</script>
+        <script src="/static/js/user_js/address.min.js?20141025"></script>
+    </div>
+    <script>
+    $("#myAddress-default").click(function () {
+            var value = $("#myAddress-default").val()
+            if(value == 1){
+                $("#myAddress-default").val(0)
+            }
+            if(value == 0){
+                $("#myAddress-default").val(1)
+            }
+        })
+    </script>
+{% endblock %}

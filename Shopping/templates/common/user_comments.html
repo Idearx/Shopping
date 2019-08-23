@@ -1,0 +1,250 @@
+{% extends 'common/user0.html' %}
+
+{% block right %}
+    <div class="fr u-4-5"><!-- 20141212-栏目-start -->
+        <div class="section-header">
+            <div class="fl">
+                <h2><span>商品评价</span></h2>
+            </div>
+            <div class="fr">
+                <div class="ec-tab" id="ec-tab">
+                    <ul id="ordertime">
+                        <li class="current"><a href="javascript:;" ><span>最近六个月商品</span></a>
+                        </li>
+                        <li><a href="javascript:;"><span>六个月之前商品</span></a></li>
+                    </ul>
+                    <div class="ec-tab-arrow" style="width: 124px; left: 0px;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 20141212-栏目-end -->
+        <div class="hr-20"></div>
+        <!-- 20141225-我的评价-列表-start -->
+        <div class="myEval-record">
+            <div class="list-group-title" id="list-group-title">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <thead>
+                    <tr>
+                        <th class="col-pro">商品</th>
+                        <th class="col-operate">评价</th>
+                        <th class="col-int">评价经验值</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="list-group" id="list-group1">
+                {% if aftercount > 0 %}
+                    {% for order in afterorder %}
+                    <div class="list-group-item">
+                        <div class="o-info">
+                            <div class="col-info"><span
+                                    class="o-date">{{ order.ordtime }}</span><span
+                                    class="o-no">&nbsp;&nbsp;  订单号：<a
+                                    onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                    href="javascript:;" title="11570268226">{{ order.ordernum }}</a></span></div>
+                        </div>
+                        <div class="">
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                {% for good in aftergoods %}
+                                    {% if good.gid == order.gid %}
+                                <tr style="align-content: center">
+                                    <td class="col-pro-img" style="width: 200px;"><p class="p-img"><a
+                                            title="{{ good.goodsname }}"
+                                            href="/product/10086102942203.html#10086106925758"
+                                            target="_blank"
+                                            onclick="pushProMsg(10086106925758,'300130101')"><img
+                                            class="nocomment-2601010102602"
+                                            alt=""
+                                            src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                    </p></td>
+                                    <td class="col-pro-info" style="width: 379px"><p class="p-name"><a
+                                            title=""
+                                            target="_blank" class="nocomment-2601010102602"
+                                            href="/product/10086102942203.html#10086106925758"
+                                            onclick="pushProMsg(10086106925758,'300130101')">{{ good.goodname }}</a></p>
+                                    </td>
+                                    <td class="col-quty" style="width: 301px">评价内容</td>
+                                    <td class="col-price" style="width: 123px;">
+                                        <em>5</em></td>
+
+
+                                </tr>
+                                    {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="list-group-empty">您暂时没有相关记录。1</div>
+                {% endif %}
+            </div>
+        <div class="list-group hide" id="list-group2">
+                {% if beforecount > 0 %}
+                    {% for order in beforeorder %}
+                    <div class="list-group-item">
+                        <div class="o-info">
+                            <div class="col-info"><span
+                                    class="o-date">{{ order.ordtime }}</span><span
+                                    class="o-no">&nbsp;&nbsp;  订单号：<a
+                                    onclick="ec.postTo('/member/order/detail', {orderCode:'11570268226', isHisData: '1'});"
+                                    href="javascript:;" title="11570268226">{{ order.ordernum }}</a></span></div>
+                        </div>
+                        <div class="">
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                <tr style="align-content: center">
+                                    <td class="col-pro-img" style="width: 200px;"><p class="p-img"><a
+                                            title="{{ good.goodsname }}"
+                                            href="/product/10086102942203.html#10086106925758"
+                                            target="_blank"
+                                            onclick="pushProMsg(10086106925758,'300130101')"><img
+                                            class="nocomment-2601010102602"
+                                            alt=""
+                                            src="https://res.vmallres.com/pimages//product/6901443293506/100_100_1555465937521mp.png"></a>
+                                    </p></td>
+                                    <td class="col-pro-info" style="width: 379px"><p class="p-name"><a
+                                            title=""
+                                            target="_blank" class="nocomment-2601010102602"
+                                            href="/product/10086102942203.html#10086106925758"
+                                            onclick="pushProMsg(10086106925758,'300130101')">{{ good.goodname }}</a></p>
+                                    </td>
+                                    <td class="col-quty" style="width: 301px">评价内容</td>
+                                    <td class="col-price" style="width: 123px;">
+                                        <em>5</em></td>
+
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="list-group-empty">您暂时没有相关记录。2</div>
+                {% endif %}
+            </div>
+            <div class="list-group-page">
+                <div class="pager" id="list-pager"></div>
+            </div>
+        </div>
+
+        <input type="hidden" id="colid" value="0">
+
+        <textarea id="realNameComment" class="hide">	&lt;!-- 20170914-提示-start --&gt;
+	    &lt;div class="box-phone01"&gt;
+	        &lt;div class="h"&gt;
+	            &lt;i&gt;&lt;/i&gt;
+	        &lt;/div&gt;
+	        &lt;div class="b"&gt;
+	        	&lt;p class="title"&gt;绑定手机号码&lt;/p&gt;
+	            &lt;p&gt;根据国家相关规定，只有帐号经过实名验证的用户才可以跟帖评论或发布信息。为保障您的帐号正常使用，请尽快完成手机号绑定验证，感谢您的理解及支持！&lt;/p&gt;
+	        &lt;/div&gt;
+	    &lt;/div&gt;
+	    &lt;div class="box-button"&gt;
+	        &lt;a href="javascript:;" class="box-cancel"&gt;&lt;span&gt;取消&lt;/span&gt;&lt;/a&gt;
+	        &lt;a href="https://hwid1.vmall.com/oauth2/userCenter/hwAccount?reqClientType=26&amp;loginChannel=26000000&amp;themeName=cloudTheme&amp;lang=zh-cn" class="box-sure"&gt;&lt;span&gt;去绑定&lt;/span&gt;&lt;/a&gt;
+	    &lt;/div&gt;
+    &lt;!-- 20170914-提示-end --&gt;
+</textarea>
+
+        <script src="/static/js/user_js/remarkResultCode.js?20180115"></script>
+        <script id="jsapi_loader7" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/jquery.form-4.2.2.js" charset="utf-8"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader7');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader7 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("jquery.form", "complete");
+        })();</script>
+        <script id="jsapi_loader8" loadtype="insert" type="text/javascript"
+                src="/static/js/user_js/ajax.js" charset="utf-8"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader8');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader8 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("ajax", "complete");
+        })();</script>
+        <script src="https://res9.vmallres.com/20190630/js/uum/member/commodity/uploadImage.js?20180108"></script>
+        <script src="https://res9.vmallres.com/20190630/js/uum/member/commodity/list.js?20150106"></script>
+        <script id="jsapi_loader9" loadtype="insert" type="text/javascript"
+                src="https://res9.vmallres.com/20190630/js/common/jquery.movebar/movebar.min.js"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader9');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader9 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("jquery.movebar/movebar.min.js", "complete");
+        })();</script>
+        <script src="https://res9.vmallres.com/20190630/js/uum/member/commodity/add.min.js?20150624"></script>
+        <script id="jsapi_loader10" loadtype="insert" type="text/javascript"
+                src="https://res9.vmallres.com/20190630/js/common/RaterStar/rater-star.js"></script>
+
+        <script>
+            $("#ordertime li").click(function () {
+                $(this).addClass("current").siblings().removeClass("current");
+                if ($(this).index() === 0) {
+                    $("#list-group1").removeClass("hide").next().addClass("hide")
+                }
+                if ($(this).index() === 1) {
+                    $("#list-group2").removeClass("hide").prev().addClass("hide")
+                }
+            })
+        </script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader10');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader10 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("RaterStar/rater-star.js", "complete");
+        })();</script>
+        <script>
+            ec.load("ec.pager");
+            ec.mediaPath = "https://res.vmallres.com/pimages/";
+        </script>
+        <script id="jsapi_loader11" loadtype="insert" type="text/javascript"
+                src="https://res9.vmallres.com/20190630/js/common/ec.pager/pager-min.js" charset="gbk"></script>
+        <script>(function () {
+            var time = 0, el = document.getElementById('jsapi_loader11');
+            if (!el || (el.readyState && 'complete' != el.readyState)) {
+                if (time < 10) {
+                    setTimeout(arguments.callee, 30);
+                    time++;
+                } else {
+                    logger.error('load the script of id jsapi_loader11 fail!');
+                }
+                return;
+            }
+            ol._setLoadStatus("ec.pager/pager-min.js", "complete");
+        })();</script>
+    </div>
+{% endblock %}
